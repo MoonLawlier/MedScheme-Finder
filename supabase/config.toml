@@ -1,0 +1,27 @@
+# Minimal Supabase CLI config for local development (`supabase start`).
+project_id = "medscheme-finder"
+
+[db]
+major_version = 15
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[auth]
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback"]
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = false
+otp_length = 6
+
+[auth.sms]
+enable_signup = false
+
+[auth.external.google]
+enabled = false
+client_id = "env(SUPABASE_AUTH_GOOGLE_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_GOOGLE_SECRET)"

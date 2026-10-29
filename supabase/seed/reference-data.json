@@ -1,0 +1,1282 @@
+{
+  "version": "2026-10-29.1",
+  "sources": [
+    {
+      "id": "src-pib-pmjay-6yrs",
+      "title": "Transforming Healthcare: Six Years of Ayushman Bharat PM-JAY",
+      "publisher": "Ministry of Health and Family Welfare (via PIB)",
+      "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/sep/doc2024923400001.pdf",
+      "source_type": "official_primary",
+      "published_on": "2024-09-23",
+      "accessed_on": "2026-10-29",
+      "notes": "Coverage amount, cashless care, pre/post-hospitalisation days, SECC 2011 basis, portability."
+    },
+    {
+      "id": "src-nha-70plus",
+      "title": "Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under AB PM-JAY (press release)",
+      "publisher": "National Health Authority / PIB",
+      "url": "https://nha.gov.in/img/resources/Press_Release.pdf",
+      "source_type": "official_primary",
+      "published_on": "2024-09-11",
+      "accessed_on": "2026-10-29",
+      "notes": "Age 70+ eligibility irrespective of income, ₹5 lakh, top-up rules, CGHS/ECHS/CAPF choice, private insurance and ESI eligibility."
+    },
+    {
+      "id": "src-ls-au2641",
+      "title": "Lok Sabha Unstarred Question No. 2641 (cancer treatment under PM-JAY)",
+      "publisher": "Ministry of Health and Family Welfare, answered in Lok Sabha",
+      "url": "https://eparlib.nic.in/bitstream/123456789/2500970/1/AU2641.pdf",
+      "source_type": "official_primary",
+      "published_on": "2023-08-04",
+      "accessed_on": "2026-10-29",
+      "notes": "549 of 1,949 PM-JAY procedures are cancer-related; NHA MoU with National Cancer Grid and Tata Memorial Hospital; HMDG up to ₹1.25 lakh and RAN up to ₹15 lakh."
+    },
+    {
+      "id": "src-nha-hbp21",
+      "title": "Health Benefit Package 2.1 (AB PM-JAY package list)",
+      "publisher": "National Health Authority",
+      "url": "https://nha.gov.in/img/pmjay-files/HBP-2.1.pdf",
+      "source_type": "official_primary",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Package MC011 / procedure MC011A 'PTCA, inclusive of diagnostic angiogram' (Cardiology). Rates are from HBP 2.1 and may since have been revised."
+    },
+    {
+      "id": "src-nha-hbp20",
+      "title": "Health Benefit Package 2.0 package master",
+      "publisher": "National Health Authority",
+      "url": "https://nha.gov.in/img/resources/HBP-2.0-Package-master.pdf",
+      "source_type": "official_primary",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Includes MO065B 'CT for Pediatric Acute Promyelocytic Leukemia Induction' (Medical Oncology). Our checker could read only part of the file."
+    },
+    {
+      "id": "src-outlook-knee",
+      "title": "Is Knee Replacement Covered Under Ayushman Bharat Yojana, This Is What Govt Says",
+      "publisher": "Outlook Money (news report of a Lok Sabha reply)",
+      "url": "https://www.outlookmoney.com/personal-finance/is-knee-replacement-covered-under-ayushman-bharat-yojana-this-is-what-govt-says",
+      "source_type": "news_report",
+      "published_on": "2025-12-06",
+      "accessed_on": "2026-10-29",
+      "notes": "Reports a Lok Sabha reply stating knee replacement (primary and revision) is listed under the Orthopaedics speciality of AB PM-JAY. The official reply itself was not accessed."
+    },
+    {
+      "id": "src-manipur-grievance",
+      "title": "PM-JAY grievance and helpline information",
+      "publisher": "State Health Agency, Manipur (shamanipur.mn.gov.in)",
+      "url": "https://shamanipur.mn.gov.in/Static/Grievance",
+      "source_type": "official_secondary",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Lists national helpline 14555 and the NHA grievance portal cgrms.nha.gov.in."
+    },
+    {
+      "id": "src-aiimsbbsr-pmjay-doc",
+      "title": "Updated information related to Ayushman Bharat",
+      "publisher": "AIIMS Bhubaneswar",
+      "url": "https://aiimsbhubaneswar.nic.in/wp-content/uploads/2026/05/UPDATED-INFORMATION-RELATED-TO-AYUSHMAN-BHARAT.pdf",
+      "source_type": "hospital_official",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Package-based cashless care; admission/discharge process with pre-authorisation and biometric verification; documents asked for at admission. Uploaded May 2026."
+    },
+    {
+      "id": "src-aiimsbbsr-pmjay",
+      "title": "Ayushman Bharat (PM-JAY) – patient process page",
+      "publisher": "AIIMS Bhubaneswar",
+      "url": "https://aiimsbhubaneswar.nic.in/schemes/ayushman-bharat-pm-jay/",
+      "source_type": "hospital_official",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Hospital's own page describing its PM-JAY admission and discharge process at the Ayushman Bharat counter."
+    },
+    {
+      "id": "src-aiimsbbsr-ran",
+      "title": "Umbrella Scheme Rashtriya Arogya Nidhi (RAN)",
+      "publisher": "AIIMS Bhubaneswar",
+      "url": "https://aiimsbhubaneswar.nic.in/schemes/umbrella-scheme-rashtriya-arogya-nidhi-ran/",
+      "source_type": "hospital_official",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Eligibility routes, limits (RAN up to ₹15 lakh, HMDG up to ₹1.25 lakh), sanction process, documents, PM-JAY overlap."
+    },
+    {
+      "id": "src-pib-ran-2022",
+      "title": "Details of Financial Assistance for Poor Patients",
+      "publisher": "Press Information Bureau (Lok Sabha written reply)",
+      "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1843846&reg=48&lang=2",
+      "source_type": "official_primary",
+      "published_on": "2022-07-22",
+      "accessed_on": "2026-10-29",
+      "notes": "Umbrella RAN: one-time assistance up to ₹15 lakh (₹20 lakh rare diseases), released to treating government hospitals; HMDG up to ₹1.25 lakh for annual family income up to ₹1.25 lakh."
+    },
+    {
+      "id": "src-ls-au5561",
+      "title": "Lok Sabha Unstarred Question No. 5561 (Health Minister's Cancer Patient Fund)",
+      "publisher": "Ministry of Health and Family Welfare, answered in Lok Sabha",
+      "url": "https://eparlib.sansad.in/bitstream/123456789/3010946/1/AU5561_tNqey7.pdf",
+      "source_type": "official_primary",
+      "published_on": "2025-04-04",
+      "accessed_on": "2026-10-29",
+      "notes": "HMCPF: one-time assistance up to ₹15 lakh for cancer patients below the State/UT poverty line at RCCs, TCCCs, SCIs and other government hospitals."
+    },
+    {
+      "id": "src-mohfw-ran",
+      "title": "Rashtriya Arogya Nidhi",
+      "publisher": "Ministry of Health and Family Welfare",
+      "url": "https://mohfw.gov.in/major-programmes/poor-patients-financial-assistance/rashtriya-arogya-nidhi",
+      "source_type": "official_primary",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Names AIIMS New Delhi among central institutes holding a RAN revolving fund. Its ₹2 lakh per-case figure appears to predate the 2019 umbrella guidelines and is NOT used for amounts."
+    },
+    {
+      "id": "src-iggmc-integrated",
+      "title": "Integrated Ayushman Bharat – PMJAY and MJPJAY (scheme summary)",
+      "publisher": "Indira Gandhi Government Medical College website (iggmc.edu.in)",
+      "url": "https://iggmc.edu.in/wp-content/uploads/2026/04/Integrated-Ayushman-Bharat.pdf",
+      "source_type": "official_secondary",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "₹5 lakh floater, beneficiary categories A–E, 1,356 packages / 34 specialties, assurance mode, documents, GR dated 28 July 2023, expanded scope from 1 July 2024. Uploaded April 2026. The primary portal jeevandayee.gov.in could not be fetched."
+    },
+    {
+      "id": "src-pmnrf",
+      "title": "Prime Minister's National Relief Fund – official website",
+      "publisher": "Prime Minister's Office",
+      "url": "https://pmnrf.gov.in/",
+      "source_type": "official_primary",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Partial assistance for heart surgery, kidney transplantation, cancer treatment and acid-attack cases; government and empanelled private hospitals."
+    },
+    {
+      "id": "src-gcri-pmnrf",
+      "title": "PM Relief Fund information sheet",
+      "publisher": "Gujarat Cancer & Research Institute (gcriindia.org)",
+      "url": "https://www.gcriindia.org/Download/PM%20RELIEF%20FUND%20(English).pdf",
+      "source_type": "hospital_official",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "PMNRF contact: Under Secretary (Funds), PMO, South Block, New Delhi-110011; phone 011-23013683."
+    },
+    {
+      "id": "src-tmh-booklet",
+      "title": "Tata Memorial Hospital patient booklet",
+      "publisher": "Tata Memorial Centre (tmc.gov.in)",
+      "url": "https://tmc.gov.in/event/upload/12112025_5/TMH_Brochure_%20patient%20booklet.pdf",
+      "source_type": "hospital_official",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Lists MJPJAY, AB-PMJAY, PMNRF and CMRF among schemes; scheme help at the Medical Social Services Department (Golden Jubilee Block, ground floor); adult haematology clinics for acute leukaemia and CML; board line 022 2417 7000."
+    }
+  ],
+  "medical_needs": [
+    {
+      "id": "knee-replacement",
+      "name": "Knee replacement",
+      "kind": "procedure",
+      "specialty": "Orthopaedics",
+      "summary": "Surgery to replace a damaged knee joint. Some schemes have age-based routes, such as cover for people aged 70 and above.",
+      "sort_order": 1
+    },
+    {
+      "id": "leukemia",
+      "name": "Leukaemia",
+      "kind": "disease",
+      "specialty": "Medical oncology / haematology",
+      "summary": "A blood cancer treated with chemotherapy, targeted medicines or transplant. Cancer-specific funds may apply.",
+      "sort_order": 2
+    },
+    {
+      "id": "angioplasty",
+      "name": "Angioplasty",
+      "kind": "procedure",
+      "specialty": "Cardiology",
+      "summary": "A procedure to open a narrowed heart artery, usually with a stent.",
+      "sort_order": 3
+    }
+  ],
+  "schemes": [
+    {
+      "id": "pmjay-family",
+      "official_name": "Ayushman Bharat – Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)",
+      "short_name": "PM-JAY",
+      "issuing_authority": "National Health Authority, Ministry of Health and Family Welfare, Government of India",
+      "scope": "national",
+      "applicable_states": [],
+      "summary": "Publicly funded health assurance: cashless secondary and tertiary hospitalisation for eligible families at empanelled public and private hospitals across India.",
+      "intended_beneficiaries": "Families identified as eligible from the Socio-Economic Caste Census (SECC) 2011 data — described officially as the poorest 40% of the population — and groups added by later expansions.",
+      "benefit_amount_inr": 500000,
+      "benefit_unit": "per family per year, shared by all members (floater)",
+      "benefit_mechanism": "cashless_package",
+      "payment_recipient": "hospital",
+      "benefit_details": [
+        {
+          "text": "Annual cover of up to ₹5 lakh per entitled family for secondary and tertiary hospitalisation.",
+          "source_id": "src-pib-pmjay-6yrs"
+        },
+        {
+          "text": "Cashless treatment at the point of care in empanelled public and private hospitals.",
+          "source_id": "src-pib-pmjay-6yrs"
+        },
+        {
+          "text": "Covers up to 3 days of pre-hospitalisation and up to 15 days of post-hospitalisation expenses, including diagnostics and medicines.",
+          "source_id": "src-pib-pmjay-6yrs"
+        },
+        {
+          "text": "Assistance is package-based: the scheme pays the hospital a pre-defined rate for the approved package.",
+          "source_id": "src-aiimsbbsr-pmjay-doc"
+        },
+        {
+          "text": "Reference rate for angioplasty in HBP 2.1: procedure price ₹40,600; total package ₹49,300–₹66,700 with bare-metal stents and ₹72,200–₹1,35,400 with drug-eluting stents, depending on the number of stents. Rates are revised over time and some states set their own.",
+          "source_id": "src-nha-hbp21"
+        },
+        {
+          "text": "Treatment is portable: beneficiaries can use empanelled hospitals in other states.",
+          "source_id": "src-pib-pmjay-6yrs"
+        }
+      ],
+      "patient_costs_note": "₹5 lakh is a yearly ceiling shared by the family, not money paid to you. Treatment at non-empanelled hospitals, items outside the approved package, and care that was not pre-authorised may not be covered. Ask the hospital's Ayushman desk what the package includes before admission.",
+      "application_channel": "Check beneficiary status and get an Ayushman card online or at an empanelled hospital's Ayushman desk; the hospital then seeks pre-authorisation for treatment.",
+      "application_steps": [
+        {
+          "text": "Check whether the family is listed as a beneficiary on the official NHA beneficiary portal, or ask at an empanelled hospital's Ayushman desk.",
+          "source_id": null
+        },
+        {
+          "text": "Carry the Ayushman card and a valid photo ID to an empanelled hospital.",
+          "source_id": "src-iggmc-integrated"
+        },
+        {
+          "text": "At admission the treating doctor raises a pre-authorisation under the relevant package code and identity is verified at the Ayushman Bharat counter; the scheme approves the package.",
+          "source_id": "src-aiimsbbsr-pmjay-doc"
+        },
+        {
+          "text": "At discharge identity is verified again and the hospital closes the claim with the scheme. (Process as described by AIIMS Bhubaneswar; other hospitals may differ in detail.)",
+          "source_id": "src-aiimsbbsr-pmjay-doc"
+        }
+      ],
+      "application_url": "https://beneficiary.nha.gov.in/",
+      "application_url_status": "official_domain_unfetched",
+      "info_url": "https://pmjay.gov.in/",
+      "hospital_directory_url": "https://hospitals.pmjay.gov.in/",
+      "helpdesk": [
+        {
+          "text": "National PM-JAY helpline: 14555",
+          "source_id": "src-manipur-grievance"
+        },
+        {
+          "text": "Online grievance portal: https://cgrms.nha.gov.in/",
+          "source_id": "src-manipur-grievance"
+        }
+      ],
+      "verification_status": "partially_verified",
+      "last_verified_on": "2026-10-29",
+      "source_updated_on": "2024-09-23",
+      "uncertainty_notes": [
+        "Whether a particular family is a beneficiary can only be confirmed against the official database.",
+        "Package rates are revised periodically (HBP versions) and some states set their own rates.",
+        "pmjay.gov.in and beneficiary.nha.gov.in are official NHA domains, but our automated check on 2026-10-29 could not read their pages."
+      ],
+      "is_demo": false,
+      "source_ids": [
+        "src-pib-pmjay-6yrs",
+        "src-nha-hbp21",
+        "src-nha-hbp20",
+        "src-ls-au2641",
+        "src-aiimsbbsr-pmjay-doc",
+        "src-manipur-grievance"
+      ]
+    },
+    {
+      "id": "pmjay-senior-70",
+      "official_name": "AB PM-JAY coverage for senior citizens aged 70 years and above",
+      "short_name": "PM-JAY 70+ (Vay Vandana)",
+      "issuing_authority": "National Health Authority, Ministry of Health and Family Welfare, Government of India",
+      "scope": "national",
+      "applicable_states": [],
+      "summary": "Everyone aged 70 or older is eligible for AB PM-JAY cover regardless of income, through a separate card for senior citizens.",
+      "intended_beneficiaries": "All citizens aged 70 years and above, irrespective of socio-economic status.",
+      "benefit_amount_inr": 500000,
+      "benefit_unit": "per year — on a family basis for seniors not already covered; as an exclusive top-up for the senior if the family is already covered",
+      "benefit_mechanism": "cashless_package",
+      "payment_recipient": "hospital",
+      "benefit_details": [
+        {
+          "text": "Free health cover of up to ₹5 lakh per year.",
+          "source_id": "src-nha-70plus"
+        },
+        {
+          "text": "If the family is already covered under AB PM-JAY, the senior gets an additional top-up of up to ₹5 lakh per year for themselves, not shared with family members under 70.",
+          "source_id": "src-nha-70plus"
+        },
+        {
+          "text": "Seniors in families not already covered get up to ₹5 lakh per year on a family basis.",
+          "source_id": "src-nha-70plus"
+        },
+        {
+          "text": "Care is cashless at empanelled hospitals, with the scheme paying the hospital for approved packages.",
+          "source_id": "src-pib-pmjay-6yrs"
+        }
+      ],
+      "patient_costs_note": "The amount is a yearly ceiling, not a payment to the patient. Items outside the approved package or care at non-empanelled hospitals may not be covered.",
+      "application_channel": "Enrol the senior for the separate AB PM-JAY senior-citizen card, then use it at an empanelled hospital.",
+      "application_steps": [
+        {
+          "text": "Enrol the senior citizen for the new, distinct AB PM-JAY card issued to people aged 70 and above.",
+          "source_id": "src-nha-70plus"
+        },
+        {
+          "text": "Take the card and ID to an empanelled hospital's Ayushman desk; the hospital seeks pre-authorisation for the treatment package.",
+          "source_id": "src-aiimsbbsr-pmjay-doc"
+        }
+      ],
+      "application_url": "https://beneficiary.nha.gov.in/",
+      "application_url_status": "official_domain_unfetched",
+      "info_url": "https://pmjay.gov.in/",
+      "hospital_directory_url": "https://hospitals.pmjay.gov.in/",
+      "helpdesk": [
+        {
+          "text": "National PM-JAY helpline: 14555",
+          "source_id": "src-manipur-grievance"
+        }
+      ],
+      "verification_status": "partially_verified",
+      "last_verified_on": "2026-10-29",
+      "source_updated_on": "2024-09-11",
+      "uncertainty_notes": [
+        "Media reports call the card 'Ayushman Vay Vandana'; the official release we verified describes it as 'a new distinct card'.",
+        "The enrolment documents were not listed in the sources we could verify."
+      ],
+      "is_demo": false,
+      "source_ids": [
+        "src-nha-70plus",
+        "src-pib-pmjay-6yrs",
+        "src-aiimsbbsr-pmjay-doc"
+      ]
+    },
+    {
+      "id": "mh-mjpjay-integrated",
+      "official_name": "Integrated Ayushman Bharat – PM-JAY and Mahatma Jyotirao Phule Jan Arogya Yojana (MJPJAY)",
+      "short_name": "MJPJAY + PM-JAY (Maharashtra)",
+      "issuing_authority": "Government of Maharashtra (State Health Assurance Society), with the National Health Authority",
+      "scope": "state",
+      "applicable_states": [
+        "MH"
+      ],
+      "summary": "Maharashtra's combined scheme: cashless treatment for listed health benefit packages at network hospitals, open to nearly all families in the state.",
+      "intended_beneficiaries": "Category A: yellow, AAY, Annapurna and orange ration-card holders and PM-JAY households. Category B: white ration-card holders (including government employees) and families without a ration card who hold a Maharashtra domicile certificate. Category C: listed institutional groups such as ashram-school students, children in orphanages, residents of old-age homes, journalists and registered construction workers from outside Maharashtra. Separate categories cover road-accident victims and certain Karnataka border villages.",
+      "benefit_amount_inr": 500000,
+      "benefit_unit": "per family per year, floater (categories A, B, C and E)",
+      "benefit_mechanism": "cashless_package",
+      "payment_recipient": "hospital",
+      "benefit_details": [
+        {
+          "text": "Up to ₹5 lakh per family per year on a floater basis.",
+          "source_id": "src-iggmc-integrated"
+        },
+        {
+          "text": "Runs in assurance mode: the State Health Assurance Society pays network hospitals directly. The package covers treatment from admission to discharge, including complications.",
+          "source_id": "src-iggmc-integrated"
+        },
+        {
+          "text": "1,356 health benefit packages across 34 specialties, plus follow-up packages.",
+          "source_id": "src-iggmc-integrated"
+        },
+        {
+          "text": "Packages include one-time transport, and transport of the body if the patient dies.",
+          "source_id": "src-iggmc-integrated"
+        }
+      ],
+      "patient_costs_note": "The ₹5 lakh is a family ceiling, not a payment to you. Procedures outside the listed packages and non-network hospitals are not covered by the scheme.",
+      "application_channel": "Through the Arogyamitra (scheme help desk) at any network hospital.",
+      "application_steps": [
+        {
+          "text": "Go to a network hospital and contact the Arogyamitra.",
+          "source_id": "src-iggmc-integrated"
+        },
+        {
+          "text": "Show the Ayushman card or a qualifying ration card — or, for Category B without a ration card, a domicile or Tahsildar certificate with a self-declaration — along with ID proof.",
+          "source_id": "src-iggmc-integrated"
+        },
+        {
+          "text": "The hospital registers the patient on the scheme's portal and treatment proceeds cashless. In an emergency, the hospital can be informed by phone or email.",
+          "source_id": "src-iggmc-integrated"
+        }
+      ],
+      "application_url": "https://www.jeevandayee.gov.in/",
+      "application_url_status": "official_domain_unfetched",
+      "info_url": "https://www.jeevandayee.gov.in/",
+      "hospital_directory_url": "https://www.jeevandayee.gov.in/",
+      "helpdesk": [
+        {
+          "text": "The scheme runs a dedicated call centre for information and grievances; the number was not listed in the sources we could verify.",
+          "source_id": "src-iggmc-integrated"
+        }
+      ],
+      "verification_status": "partially_verified",
+      "last_verified_on": "2026-10-29",
+      "source_updated_on": null,
+      "uncertainty_notes": [
+        "Facts come from a government medical college's published summary; the scheme's own portal (jeevandayee.gov.in) could not be read by our checker.",
+        "An older page on jeevandayee.gov.in still describes the earlier ₹1.5 lakh scheme. That is historical and is not used here.",
+        "Whether a specific procedure is among the 1,356 packages was not verified."
+      ],
+      "is_demo": false,
+      "source_ids": [
+        "src-iggmc-integrated"
+      ]
+    },
+    {
+      "id": "ran-umbrella",
+      "official_name": "Umbrella Scheme of Rashtriya Arogya Nidhi (RAN)",
+      "short_name": "Rashtriya Arogya Nidhi",
+      "issuing_authority": "Ministry of Health and Family Welfare, Government of India",
+      "scope": "national",
+      "applicable_states": [],
+      "summary": "One-time financial assistance for poor patients with major life-threatening diseases who are treated at government hospitals.",
+      "intended_beneficiaries": "Patients from families living below the threshold poverty line with a major life-threatening disease (such as heart, kidney, liver or cancer conditions), treated at a government hospital or institute.",
+      "benefit_amount_inr": 1500000,
+      "benefit_unit": "one-time assistance (up to ₹20 lakh under the rare-disease component)",
+      "benefit_mechanism": "one_time_grant_to_hospital",
+      "payment_recipient": "hospital",
+      "benefit_details": [
+        {
+          "text": "One-time financial assistance of up to ₹15 lakh; up to ₹20 lakh under the rare-disease component.",
+          "source_id": "src-pib-ran-2022"
+        },
+        {
+          "text": "Assistance is released to the treating government hospital, not paid to the patient.",
+          "source_id": "src-pib-ran-2022"
+        },
+        {
+          "text": "At AIIMS Bhubaneswar, a sanction order with the amount and validity period goes to the hospital, with a copy to the applicant.",
+          "source_id": "src-aiimsbbsr-ran"
+        }
+      ],
+      "patient_costs_note": "This is a one-time grant up to the sanctioned amount for treatment at the government hospital. Costs beyond the sanction, or treatment elsewhere, are not covered.",
+      "application_channel": "Through the treating government hospital (Medical Superintendent's office or the RAN nodal officer).",
+      "application_steps": [
+        {
+          "text": "Get a treatment cost estimate from the treating government hospital.",
+          "source_id": "src-aiimsbbsr-ran"
+        },
+        {
+          "text": "Submit the application form with the estimate and documents; it is countersigned by the Medical Superintendent.",
+          "source_id": "src-aiimsbbsr-ran"
+        },
+        {
+          "text": "The hospital's committee approves it, or the nodal officer forwards it to the Ministry, depending on the route. The sanction is issued to the hospital.",
+          "source_id": "src-aiimsbbsr-ran"
+        }
+      ],
+      "application_url": null,
+      "application_url_status": "not_verified",
+      "info_url": "https://mohfw.gov.in/major-programmes/poor-patients-financial-assistance/rashtriya-arogya-nidhi",
+      "hospital_directory_url": null,
+      "helpdesk": [],
+      "verification_status": "partially_verified",
+      "last_verified_on": "2026-10-29",
+      "source_updated_on": "2022-07-22",
+      "uncertainty_notes": [
+        "The 2019 RAN guidelines on mohfw.gov.in could not be read by our checker; limits come from a 2022 Lok Sabha reply and AIIMS Bhubaneswar's scheme page.",
+        "An older MoHFW page mentions ₹2 lakh per case; this appears to predate the umbrella scheme and is not used.",
+        "There is no patient-facing online application link we could verify."
+      ],
+      "is_demo": false,
+      "source_ids": [
+        "src-pib-ran-2022",
+        "src-aiimsbbsr-ran",
+        "src-ls-au2641",
+        "src-mohfw-ran"
+      ]
+    },
+    {
+      "id": "hmcpf",
+      "official_name": "Health Minister's Cancer Patient Fund (HMCPF), under the Umbrella Scheme of RAN",
+      "short_name": "HMCPF",
+      "issuing_authority": "Ministry of Health and Family Welfare, Government of India",
+      "scope": "national",
+      "applicable_states": [],
+      "summary": "One-time financial assistance for cancer patients from families below the poverty line, for treatment at government cancer institutions.",
+      "intended_beneficiaries": "Cancer patients living below the State/UT-wise poverty line, treated at a Regional Cancer Centre, Tertiary Care Cancer Centre, State Cancer Institute or another government hospital with cancer treatment facilities.",
+      "benefit_amount_inr": 1500000,
+      "benefit_unit": "one-time assistance",
+      "benefit_mechanism": "one_time_grant_to_hospital",
+      "payment_recipient": "hospital",
+      "benefit_details": [
+        {
+          "text": "One-time financial assistance of up to ₹15 lakh.",
+          "source_id": "src-ls-au5561"
+        },
+        {
+          "text": "For treatment at RCCs, TCCCs, State Cancer Institutes and other government hospitals or institutes with cancer treatment facilities.",
+          "source_id": "src-ls-au5561"
+        },
+        {
+          "text": "Under the RAN umbrella, assistance is released to the treating hospital.",
+          "source_id": "src-pib-ran-2022"
+        }
+      ],
+      "patient_costs_note": "A one-time grant up to the sanctioned amount, paid to the treating government institution. It is not a cash payment to the patient.",
+      "application_channel": "Through the treating government cancer institution.",
+      "application_steps": [
+        {
+          "text": "Ask the medical social worker or scheme desk at the treating government cancer hospital about HMCPF assistance and the documents they need.",
+          "source_id": null
+        }
+      ],
+      "application_url": null,
+      "application_url_status": "not_verified",
+      "info_url": "https://eparlib.sansad.in/bitstream/123456789/3010946/1/AU5561_tNqey7.pdf",
+      "hospital_directory_url": null,
+      "helpdesk": [],
+      "verification_status": "partially_verified",
+      "last_verified_on": "2026-10-29",
+      "source_updated_on": "2025-04-04",
+      "uncertainty_notes": [
+        "The application process and document list for HMCPF were not available in the sources we could verify.",
+        "We have not verified which specific hospitals currently process HMCPF applications."
+      ],
+      "is_demo": false,
+      "source_ids": [
+        "src-ls-au5561",
+        "src-pib-ran-2022"
+      ]
+    },
+    {
+      "id": "hmdg",
+      "official_name": "Health Minister's Discretionary Grant (HMDG)",
+      "short_name": "HMDG",
+      "issuing_authority": "Ministry of Health and Family Welfare, Government of India",
+      "scope": "national",
+      "applicable_states": [],
+      "summary": "Financial assistance of up to ₹1.25 lakh for poor, indigent patients where free treatment is not available.",
+      "intended_beneficiaries": "Poor, indigent patients with an annual family income of ₹1.25 lakh or less.",
+      "benefit_amount_inr": 125000,
+      "benefit_unit": "maximum assistance",
+      "benefit_mechanism": "other",
+      "payment_recipient": "unknown",
+      "benefit_details": [
+        {
+          "text": "Assistance up to a maximum of ₹1.25 lakh.",
+          "source_id": "src-pib-ran-2022"
+        },
+        {
+          "text": "How and to whom HMDG is paid was not stated in the sources we could verify.",
+          "source_id": null
+        }
+      ],
+      "patient_costs_note": "₹1.25 lakh is a maximum, not a guaranteed amount.",
+      "application_channel": "Not verified. Ask the treating government hospital.",
+      "application_steps": [
+        {
+          "text": "The application route for HMDG was not described in the sources we could verify. Ask the treating government hospital's social worker or scheme desk.",
+          "source_id": null
+        }
+      ],
+      "application_url": null,
+      "application_url_status": "not_verified",
+      "info_url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1843846&reg=48&lang=2",
+      "hospital_directory_url": null,
+      "helpdesk": [],
+      "verification_status": "requires_verification",
+      "last_verified_on": "2026-10-29",
+      "source_updated_on": "2022-07-22",
+      "uncertainty_notes": [
+        "Which conditions qualify, the payment route and the application process are not verified.",
+        "The income limit is from a 2022 Lok Sabha reply and may have been revised."
+      ],
+      "is_demo": false,
+      "source_ids": [
+        "src-pib-ran-2022",
+        "src-ls-au2641"
+      ]
+    },
+    {
+      "id": "pmnrf",
+      "official_name": "Prime Minister's National Relief Fund (PMNRF) – medical assistance",
+      "short_name": "PMNRF",
+      "issuing_authority": "Prime Minister's Office, Government of India",
+      "scope": "national",
+      "applicable_states": [],
+      "summary": "Partial financial help toward the cost of major treatments such as heart surgery, kidney transplantation and cancer treatment.",
+      "intended_beneficiaries": "Needy people requiring major medical treatment; the fund decides each case.",
+      "benefit_amount_inr": null,
+      "benefit_unit": null,
+      "benefit_mechanism": "partial_assistance",
+      "payment_recipient": "unknown",
+      "benefit_details": [
+        {
+          "text": "The fund partially defrays treatment expenses. No amount or ceiling is published in the sources we verified.",
+          "source_id": "src-pmnrf"
+        },
+        {
+          "text": "Central and state government hospitals are on the fund's panel, and the site links to a list of empanelled private hospitals.",
+          "source_id": "src-pmnrf"
+        }
+      ],
+      "patient_costs_note": "Assistance is partial. Expect to cover the remaining cost from other sources.",
+      "application_channel": "Application to the Prime Minister's Office; see the official PMNRF website.",
+      "application_steps": [
+        {
+          "text": "The application process was not described on the pages we could verify. Check the official PMNRF website or ask the hospital's medical social worker.",
+          "source_id": null
+        }
+      ],
+      "application_url": "https://pmnrf.gov.in/",
+      "application_url_status": "official_verified",
+      "info_url": "https://pmnrf.gov.in/",
+      "hospital_directory_url": null,
+      "helpdesk": [
+        {
+          "text": "Under Secretary (Funds), PMNRF, Prime Minister's Office, South Block, New Delhi-110011. Phone 011-23013683.",
+          "source_id": "src-gcri-pmnrf"
+        }
+      ],
+      "verification_status": "partially_verified",
+      "last_verified_on": "2026-10-29",
+      "source_updated_on": null,
+      "uncertainty_notes": [
+        "Eligibility rules, amounts and the document list are not published on the pages we verified.",
+        "The contact details come from a hospital's copy of PMNRF information, not from the PMNRF site."
+      ],
+      "is_demo": false,
+      "source_ids": [
+        "src-pmnrf",
+        "src-gcri-pmnrf"
+      ]
+    }
+  ],
+  "scheme_treatments": [
+    {
+      "scheme_id": "pmjay-family",
+      "medical_need_id": "angioplasty",
+      "coverage_level": "procedure_verified",
+      "coverage_note": "Package MC011 'PTCA, inclusive of diagnostic angiogram' (Cardiology) is in the NHA HBP 2.1 list.",
+      "source_id": "src-nha-hbp21"
+    },
+    {
+      "scheme_id": "pmjay-family",
+      "medical_need_id": "leukemia",
+      "coverage_level": "category_verified",
+      "coverage_note": "549 of the scheme's procedures are cancer-related, and NHA's HBP 2.0 list includes leukaemia chemotherapy packages (e.g. MO065B for paediatric APL induction). The exact package depends on the leukaemia type and protocol.",
+      "source_id": "src-ls-au2641"
+    },
+    {
+      "scheme_id": "pmjay-family",
+      "medical_need_id": "knee-replacement",
+      "coverage_level": "secondary_source",
+      "coverage_note": "A news report of a December 2025 Lok Sabha reply says knee replacement (primary and revision) is listed under Orthopaedics. We could not access the official reply or package list.",
+      "source_id": "src-outlook-knee"
+    },
+    {
+      "scheme_id": "pmjay-senior-70",
+      "medical_need_id": "angioplasty",
+      "coverage_level": "procedure_verified",
+      "coverage_note": "Uses the AB PM-JAY package list; PTCA (MC011) is in HBP 2.1.",
+      "source_id": "src-nha-hbp21"
+    },
+    {
+      "scheme_id": "pmjay-senior-70",
+      "medical_need_id": "leukemia",
+      "coverage_level": "category_verified",
+      "coverage_note": "Uses the AB PM-JAY package list, which includes cancer and leukaemia packages.",
+      "source_id": "src-ls-au2641"
+    },
+    {
+      "scheme_id": "pmjay-senior-70",
+      "medical_need_id": "knee-replacement",
+      "coverage_level": "secondary_source",
+      "coverage_note": "A news report of a December 2025 Lok Sabha reply says knee replacements have been authorised for senior citizens under AB PM-JAY. The official reply was not accessed.",
+      "source_id": "src-outlook-knee"
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "medical_need_id": "knee-replacement",
+      "coverage_level": "unverified",
+      "coverage_note": "The scheme covers 1,356 packages across 34 specialties; we did not verify that knee replacement is one of them.",
+      "source_id": "src-iggmc-integrated"
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "medical_need_id": "angioplasty",
+      "coverage_level": "unverified",
+      "coverage_note": "The scheme covers 1,356 packages across 34 specialties; we did not verify that angioplasty is one of them.",
+      "source_id": "src-iggmc-integrated"
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "medical_need_id": "leukemia",
+      "coverage_level": "unverified",
+      "coverage_note": "The scheme covers 1,356 packages across 34 specialties; we did not verify which leukaemia treatments are included. Tata Memorial Hospital lists MJPJAY among the schemes it handles.",
+      "source_id": "src-tmh-booklet"
+    },
+    {
+      "scheme_id": "ran-umbrella",
+      "medical_need_id": "angioplasty",
+      "coverage_level": "unverified",
+      "coverage_note": "Heart disease is named among the life-threatening conditions covered; whether a particular angioplasty qualifies is decided case by case.",
+      "source_id": "src-aiimsbbsr-ran"
+    },
+    {
+      "scheme_id": "hmcpf",
+      "medical_need_id": "leukemia",
+      "coverage_level": "category_verified",
+      "coverage_note": "Leukaemia is a cancer, and the fund covers cancer treatment.",
+      "source_id": "src-ls-au5561"
+    },
+    {
+      "scheme_id": "hmdg",
+      "medical_need_id": "angioplasty",
+      "coverage_level": "unverified",
+      "coverage_note": "Which conditions HMDG covers was not stated in the sources we verified.",
+      "source_id": "src-pib-ran-2022"
+    },
+    {
+      "scheme_id": "hmdg",
+      "medical_need_id": "leukemia",
+      "coverage_level": "unverified",
+      "coverage_note": "Cancer is named among conditions in the related RAN schemes; HMDG's own condition list was not verified.",
+      "source_id": "src-ls-au2641"
+    },
+    {
+      "scheme_id": "pmnrf",
+      "medical_need_id": "leukemia",
+      "coverage_level": "category_verified",
+      "coverage_note": "Cancer treatment is named among the treatments the fund partially supports.",
+      "source_id": "src-pmnrf"
+    },
+    {
+      "scheme_id": "pmnrf",
+      "medical_need_id": "angioplasty",
+      "coverage_level": "unverified",
+      "coverage_note": "Heart surgery is named; whether angioplasty qualifies is decided by the fund.",
+      "source_id": "src-pmnrf"
+    }
+  ],
+  "scheme_eligibility_rules": [
+    {
+      "id": "pmjay-family-beneficiary",
+      "scheme_id": "pmjay-family",
+      "criterion": "beneficiary_status",
+      "definition": {
+        "type": "pmjay_beneficiary",
+        "accepted": [
+          "has_card",
+          "listed"
+        ]
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "The family must be an eligible PM-JAY beneficiary household (identified from SECC 2011 data or an approved expansion).",
+      "source_id": "src-pib-pmjay-6yrs",
+      "sort_order": 1
+    },
+    {
+      "id": "pmjay-family-income",
+      "scheme_id": "pmjay-family",
+      "criterion": "income",
+      "definition": {
+        "type": "informational"
+      },
+      "mandatory": false,
+      "any_of_group": null,
+      "official_text": "Eligibility comes from SECC 2011 deprivation and occupation criteria, not from a single income limit.",
+      "source_id": "src-pib-pmjay-6yrs",
+      "sort_order": 2
+    },
+    {
+      "id": "pmjay-family-residence",
+      "scheme_id": "pmjay-family",
+      "criterion": "residence",
+      "definition": {
+        "type": "no_restriction",
+        "note": "National scheme: beneficiaries can be treated at empanelled hospitals in any state."
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "Portable across India.",
+      "source_id": "src-pib-pmjay-6yrs",
+      "sort_order": 3
+    },
+    {
+      "id": "pmjay70-age",
+      "scheme_id": "pmjay-senior-70",
+      "criterion": "age",
+      "definition": {
+        "type": "age_range",
+        "min": 70
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "The person must be 70 years of age or older.",
+      "source_id": "src-nha-70plus",
+      "sort_order": 1
+    },
+    {
+      "id": "pmjay70-income",
+      "scheme_id": "pmjay-senior-70",
+      "criterion": "income",
+      "definition": {
+        "type": "no_restriction",
+        "note": "The official release says seniors aged 70+ are eligible irrespective of income or socio-economic status."
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "Eligible irrespective of income.",
+      "source_id": "src-nha-70plus",
+      "sort_order": 2
+    },
+    {
+      "id": "pmjay70-insurance",
+      "scheme_id": "pmjay-senior-70",
+      "criterion": "insurance",
+      "definition": {
+        "type": "insurance_not_excluded"
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "Seniors with private health insurance or under the Employees' State Insurance scheme are eligible.",
+      "source_id": "src-nha-70plus",
+      "sort_order": 3
+    },
+    {
+      "id": "pmjay70-cghs",
+      "scheme_id": "pmjay-senior-70",
+      "criterion": "insurance",
+      "definition": {
+        "type": "informational"
+      },
+      "mandatory": false,
+      "any_of_group": null,
+      "official_text": "Seniors already covered by CGHS, ECHS or CAPF schemes can keep their existing scheme or choose AB PM-JAY.",
+      "source_id": "src-nha-70plus",
+      "sort_order": 4
+    },
+    {
+      "id": "mh-residence",
+      "scheme_id": "mh-mjpjay-integrated",
+      "criterion": "residence",
+      "definition": {
+        "type": "residence_state",
+        "states": [
+          "MH"
+        ]
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "For families of Maharashtra (ration-card or domicile based categories).",
+      "source_id": "src-iggmc-integrated",
+      "sort_order": 1
+    },
+    {
+      "id": "mh-document",
+      "scheme_id": "mh-mjpjay-integrated",
+      "criterion": "beneficiary_status",
+      "definition": {
+        "type": "state_beneficiary_document",
+        "state": "MH",
+        "description": "a Maharashtra ration card (yellow, orange, white, AAY or Annapurna) or a Maharashtra domicile certificate"
+      },
+      "mandatory": true,
+      "any_of_group": "mh-entry",
+      "official_text": "Category A/B: a qualifying Maharashtra ration card, or a domicile certificate for families without one.",
+      "source_id": "src-iggmc-integrated",
+      "sort_order": 2
+    },
+    {
+      "id": "mh-category-c",
+      "scheme_id": "mh-mjpjay-integrated",
+      "criterion": "beneficiary_status",
+      "definition": {
+        "type": "requires_official_check"
+      },
+      "mandatory": true,
+      "any_of_group": "mh-entry",
+      "official_text": "Category C: belongs to a listed institutional group (e.g. ashram-school student, orphanage child, old-age-home resident, journalist, registered construction worker from outside the state).",
+      "source_id": "src-iggmc-integrated",
+      "sort_order": 3
+    },
+    {
+      "id": "ran-poverty",
+      "scheme_id": "ran-umbrella",
+      "criterion": "income",
+      "definition": {
+        "type": "requires_official_check"
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "The family must be living below the threshold poverty line. AIIMS Bhubaneswar also lists PM-JAY (SECC) beneficiaries for treatments PM-JAY does not cover, and NFSA AAY/PHH ration-card holders.",
+      "source_id": "src-aiimsbbsr-ran",
+      "sort_order": 1
+    },
+    {
+      "id": "ran-facility",
+      "scheme_id": "ran-umbrella",
+      "criterion": "facility",
+      "definition": {
+        "type": "requires_official_check"
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "Treatment must be at a government hospital or institute.",
+      "source_id": "src-pib-ran-2022",
+      "sort_order": 2
+    },
+    {
+      "id": "ran-pmjay-overlap",
+      "scheme_id": "ran-umbrella",
+      "criterion": "other",
+      "definition": {
+        "type": "informational"
+      },
+      "mandatory": false,
+      "any_of_group": null,
+      "official_text": "Treatments covered under PM-JAY are outside this scheme for PM-JAY beneficiaries.",
+      "source_id": "src-aiimsbbsr-ran",
+      "sort_order": 3
+    },
+    {
+      "id": "hmcpf-poverty",
+      "scheme_id": "hmcpf",
+      "criterion": "income",
+      "definition": {
+        "type": "requires_official_check"
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "The patient must be living below the State/UT-wise poverty line.",
+      "source_id": "src-ls-au5561",
+      "sort_order": 1
+    },
+    {
+      "id": "hmcpf-facility",
+      "scheme_id": "hmcpf",
+      "criterion": "facility",
+      "definition": {
+        "type": "requires_official_check"
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "Treatment at an RCC, TCCC, State Cancer Institute or another government hospital with cancer treatment facilities.",
+      "source_id": "src-ls-au5561",
+      "sort_order": 2
+    },
+    {
+      "id": "hmdg-income",
+      "scheme_id": "hmdg",
+      "criterion": "income",
+      "definition": {
+        "type": "income_max",
+        "maxAnnualIncomeInr": 125000
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "Annual family income of ₹1.25 lakh or less.",
+      "source_id": "src-pib-ran-2022",
+      "sort_order": 1
+    },
+    {
+      "id": "hmdg-facility",
+      "scheme_id": "hmdg",
+      "criterion": "facility",
+      "definition": {
+        "type": "requires_official_check"
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "For poor, indigent patients where free medical facilities are not available.",
+      "source_id": "src-pib-ran-2022",
+      "sort_order": 2
+    },
+    {
+      "id": "pmnrf-need",
+      "scheme_id": "pmnrf",
+      "criterion": "other",
+      "definition": {
+        "type": "requires_official_check"
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "Assistance is for needy people; the fund decides eligibility and the amount for each case.",
+      "source_id": "src-pmnrf",
+      "sort_order": 1
+    }
+  ],
+  "scheme_documents": [
+    {
+      "scheme_id": "pmjay-family",
+      "document": "Ayushman card",
+      "note": null,
+      "source_id": "src-iggmc-integrated",
+      "is_provisional": false,
+      "sort_order": 1
+    },
+    {
+      "scheme_id": "pmjay-family",
+      "document": "Valid photo ID proof",
+      "note": null,
+      "source_id": "src-iggmc-integrated",
+      "is_provisional": false,
+      "sort_order": 2
+    },
+    {
+      "scheme_id": "pmjay-family",
+      "document": "Copies of ration card and Aadhaar card",
+      "note": "Asked for by AIIMS Bhubaneswar at admission; other hospitals may differ.",
+      "source_id": "src-aiimsbbsr-pmjay-doc",
+      "is_provisional": false,
+      "sort_order": 3
+    },
+    {
+      "scheme_id": "pmjay-family",
+      "document": "Investigation reports and the doctor's pre-authorisation form (prepared by the hospital)",
+      "note": "As described by AIIMS Bhubaneswar.",
+      "source_id": "src-aiimsbbsr-pmjay-doc",
+      "is_provisional": false,
+      "sort_order": 4
+    },
+    {
+      "scheme_id": "pmjay-senior-70",
+      "document": "Proof of age and identity for enrolment",
+      "note": "Generic preparation item. The exact enrolment documents were not listed in our verified sources.",
+      "source_id": null,
+      "is_provisional": true,
+      "sort_order": 1
+    },
+    {
+      "scheme_id": "pmjay-senior-70",
+      "document": "The AB PM-JAY senior-citizen card, at the hospital",
+      "note": null,
+      "source_id": "src-nha-70plus",
+      "is_provisional": false,
+      "sort_order": 2
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "document": "Ayushman card, or a qualifying ration card (yellow, orange, AAY, Annapurna or white)",
+      "note": null,
+      "source_id": "src-iggmc-integrated",
+      "is_provisional": false,
+      "sort_order": 1
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "document": "Valid photo ID proof",
+      "note": null,
+      "source_id": "src-iggmc-integrated",
+      "is_provisional": false,
+      "sort_order": 2
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "document": "Category B without a ration card: Maharashtra domicile certificate or Tahsildar certificate, with a self-declaration",
+      "note": null,
+      "source_id": "src-iggmc-integrated",
+      "is_provisional": false,
+      "sort_order": 3
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "document": "Government employees: white ration card and a self-declaration",
+      "note": null,
+      "source_id": "src-iggmc-integrated",
+      "is_provisional": false,
+      "sort_order": 4
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "document": "Category C: valid ID issued by the institution or organisation",
+      "note": null,
+      "source_id": "src-iggmc-integrated",
+      "is_provisional": false,
+      "sort_order": 5
+    },
+    {
+      "scheme_id": "ran-umbrella",
+      "document": "Income certificate for the family, covering all sources",
+      "note": "As listed by AIIMS Bhubaneswar for manual applications.",
+      "source_id": "src-aiimsbbsr-ran",
+      "is_provisional": false,
+      "sort_order": 1
+    },
+    {
+      "scheme_id": "ran-umbrella",
+      "document": "Ration card (with a Hindi or English translation if it is in a regional language)",
+      "note": null,
+      "source_id": "src-aiimsbbsr-ran",
+      "is_provisional": false,
+      "sort_order": 2
+    },
+    {
+      "scheme_id": "ran-umbrella",
+      "document": "Aadhaar card copy",
+      "note": null,
+      "source_id": "src-aiimsbbsr-ran",
+      "is_provisional": false,
+      "sort_order": 3
+    },
+    {
+      "scheme_id": "ran-umbrella",
+      "document": "Filled application form with the hospital's treatment estimate",
+      "note": null,
+      "source_id": "src-aiimsbbsr-ran",
+      "is_provisional": false,
+      "sort_order": 4
+    },
+    {
+      "scheme_id": "hmcpf",
+      "document": "Proof of income or poverty-line status, ID proof and the hospital's treatment estimate",
+      "note": "Generic preparation checklist. The official HMCPF document list was not verified.",
+      "source_id": null,
+      "is_provisional": true,
+      "sort_order": 1
+    },
+    {
+      "scheme_id": "hmdg",
+      "document": "Income proof showing annual family income, ID proof and the hospital's treatment estimate",
+      "note": "Generic preparation checklist. The official HMDG document list was not verified.",
+      "source_id": null,
+      "is_provisional": true,
+      "sort_order": 1
+    },
+    {
+      "scheme_id": "pmnrf",
+      "document": "Hospital treatment estimate, income proof and ID proof",
+      "note": "Generic preparation checklist. PMNRF's official document list was not verified.",
+      "source_id": null,
+      "is_provisional": true,
+      "sort_order": 1
+    }
+  ],
+  "hospitals": [
+    {
+      "id": "tmh-mumbai",
+      "name": "Tata Memorial Hospital",
+      "address_line": "Dr. E. Borges Road, Parel",
+      "city": "Mumbai",
+      "district": "Mumbai City",
+      "state": "MH",
+      "pin": "400012",
+      "latitude": 19.0047,
+      "longitude": 72.8434,
+      "coordinates_note": "Approximate coordinates from public map data, not from an official source.",
+      "phone": "022 2417 7000 (board line)",
+      "website": "https://tmc.gov.in/",
+      "verification_status": "hospital_official_source",
+      "last_verified_on": "2026-10-29",
+      "source_id": "src-tmh-booklet"
+    },
+    {
+      "id": "aiims-bbsr",
+      "name": "All India Institute of Medical Sciences, Bhubaneswar",
+      "address_line": "Sijua, Patrapada",
+      "city": "Bhubaneswar",
+      "district": "Khordha",
+      "state": "OD",
+      "pin": "751019",
+      "latitude": 20.2313,
+      "longitude": 85.7741,
+      "coordinates_note": "Approximate coordinates from public map data, not from an official source.",
+      "phone": "(0674) 2476789 (helpdesk)",
+      "website": "https://aiimsbhubaneswar.nic.in/",
+      "verification_status": "hospital_official_source",
+      "last_verified_on": "2026-10-29",
+      "source_id": "src-aiimsbbsr-pmjay"
+    },
+    {
+      "id": "aiims-delhi",
+      "name": "All India Institute of Medical Sciences, New Delhi",
+      "address_line": null,
+      "city": "New Delhi",
+      "district": null,
+      "state": "DL",
+      "pin": null,
+      "latitude": 28.5672,
+      "longitude": 77.21,
+      "coordinates_note": "Approximate coordinates from public map data, not from an official source.",
+      "phone": null,
+      "website": null,
+      "verification_status": "government_listing",
+      "last_verified_on": "2026-10-29",
+      "source_id": "src-mohfw-ran"
+    }
+  ],
+  "scheme_hospitals": [
+    {
+      "scheme_id": "pmjay-family",
+      "hospital_id": "tmh-mumbai",
+      "medical_need_id": "leukemia",
+      "department": "Adult Haematology (Acute Leukaemia; CML/Myeloma) and Paediatric Haematology",
+      "status": "listed_by_hospital",
+      "source_id": "src-tmh-booklet",
+      "note": "The hospital's patient booklet lists AB-PMJAY. Scheme help: Medical Social Services Department, Golden Jubilee Block, ground floor."
+    },
+    {
+      "scheme_id": "pmjay-senior-70",
+      "hospital_id": "tmh-mumbai",
+      "medical_need_id": "leukemia",
+      "department": "Adult Haematology (Acute Leukaemia; CML/Myeloma)",
+      "status": "listed_by_hospital",
+      "source_id": "src-tmh-booklet",
+      "note": "The booklet lists AB-PMJAY; it does not mention the 70+ card specifically."
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "hospital_id": "tmh-mumbai",
+      "medical_need_id": "leukemia",
+      "department": "Adult Haematology (Acute Leukaemia; CML/Myeloma) and Paediatric Haematology",
+      "status": "listed_by_hospital",
+      "source_id": "src-tmh-booklet",
+      "note": "The hospital's patient booklet lists MJPJAY. Scheme help: Medical Social Services Department, Golden Jubilee Block, ground floor."
+    },
+    {
+      "scheme_id": "pmnrf",
+      "hospital_id": "tmh-mumbai",
+      "medical_need_id": "leukemia",
+      "department": "Adult Haematology (Acute Leukaemia; CML/Myeloma)",
+      "status": "listed_by_hospital",
+      "source_id": "src-tmh-booklet",
+      "note": "The hospital's patient booklet lists PMNRF among schemes its Medical Social Services Department helps with."
+    },
+    {
+      "scheme_id": "pmjay-family",
+      "hospital_id": "aiims-bbsr",
+      "medical_need_id": null,
+      "department": null,
+      "status": "listed_by_hospital",
+      "source_id": "src-aiimsbbsr-pmjay",
+      "note": "The hospital publishes its PM-JAY admission process. Treatment-specific availability was not verified."
+    },
+    {
+      "scheme_id": "pmjay-senior-70",
+      "hospital_id": "aiims-bbsr",
+      "medical_need_id": null,
+      "department": null,
+      "status": "listed_by_hospital",
+      "source_id": "src-aiimsbbsr-pmjay",
+      "note": "The hospital publishes its PM-JAY process; the 70+ card is part of AB PM-JAY. Treatment-specific availability was not verified."
+    },
+    {
+      "scheme_id": "ran-umbrella",
+      "hospital_id": "aiims-bbsr",
+      "medical_need_id": null,
+      "department": null,
+      "status": "listed_by_hospital",
+      "source_id": "src-aiimsbbsr-ran",
+      "note": "The hospital publishes its RAN application process. Treatment-specific availability was not verified."
+    },
+    {
+      "scheme_id": "ran-umbrella",
+      "hospital_id": "aiims-delhi",
+      "medical_need_id": null,
+      "department": null,
+      "status": "listed_by_scheme_document",
+      "source_id": "src-mohfw-ran",
+      "note": "Named on a MoHFW page as holding a RAN revolving fund. That page appears older than the 2019 umbrella guidelines, so confirm the current process with the hospital."
+    }
+  ]
+}
