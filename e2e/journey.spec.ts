@@ -122,6 +122,16 @@ test("E: national and state filters follow each scheme's real scope", async ({ p
   await expect(page).toHaveURL(/\/results$/);
   await page.getByRole("tab", { name: /^State: Karnataka/ }).click();
   await expect(page.getByText(/No state schemes for Karnataka/)).toBeVisible();
+
+  // A Kerala resident sees Kerala's own schemes under the State filter, and nothing from Maharashtra.
+  await page.goto("/search/leukemia");
+  await page.getByLabel(/^Their state of residence/).selectOption("KL");
+  await page.locator("#treatmentState").selectOption("KL");
+  await page.getByRole("button", { name: "Find schemes" }).click();
+  await expect(page).toHaveURL(/\/results$/);
+  await page.getByRole("tab", { name: /^State: Kerala/ }).click();
+  await expect(page.getByRole("article")).toHaveCount(2);
+  await expect(page.getByRole("article").filter({ hasText: "Karunya Benevolent Fund" })).toHaveCount(1);
 });
 
 test("H: hospitals follow the chosen location and are never shown as confirmed without a source", async ({ page, context }) => {

@@ -47,7 +47,7 @@ export function evaluateRule(rule: EligibilityRule, c: SearchCriteria): Verdict 
       return meets(`Age ${c.age} meets the documented requirement (${bounds}).`);
     }
     case "income_max": {
-      const cmp = compareIncomeToMax(c.income, d.maxAnnualIncomeInr);
+      const cmp = compareIncomeToMax(c.income, d.maxAnnualIncomeInr, d.exclusive ?? false);
       if (cmp.outcome === "MATCH") return meets(cmp.reason);
       if (cmp.outcome === "DOES_NOT_MATCH") return fails(cmp.reason);
       return missing(cmp.reason);

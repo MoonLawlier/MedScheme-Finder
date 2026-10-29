@@ -45,10 +45,16 @@ export function ModeProvider({ children }: { children: ReactNode }) {
   return <ModeContext.Provider value={{ mode, setMode }}>{children}</ModeContext.Provider>;
 }
 
+const noopSubscribe = () => () => {};
+
 export function useMode(): ModeContextValue {
   const ctx = useContext(ModeContext);
   if (!ctx) throw new Error("useMode must be used inside ModeProvider");
-  return ctx;
+  // The provider can switch to the stored mode before a consumer inside a later
+  // Suspense boundary hydrates. Report the server value ("profile") during each
+  // consumer's own hydration so its markup matches, then the real mode.
+  const hydrated = useSyncExternalStore(noopSubscribe, () => true, () => false);
+  return hydrated ? ctx : { mode: "profile", setMode: ctx.setMode };
 }
 
 export function ModeToggle({ size = "sm", className }: { size?: "sm" | "lg"; className?: string }) {

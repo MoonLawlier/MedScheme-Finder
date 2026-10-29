@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29.1",
+  "version": "2026-10-29.3",
   "sources": [
     {
       "id": "src-pib-pmjay-6yrs",
@@ -50,16 +50,6 @@
       "published_on": null,
       "accessed_on": "2026-10-29",
       "notes": "Includes MO065B 'CT for Pediatric Acute Promyelocytic Leukemia Induction' (Medical Oncology). Our checker could read only part of the file."
-    },
-    {
-      "id": "src-outlook-knee",
-      "title": "Is Knee Replacement Covered Under Ayushman Bharat Yojana, This Is What Govt Says",
-      "publisher": "Outlook Money (news report of a Lok Sabha reply)",
-      "url": "https://www.outlookmoney.com/personal-finance/is-knee-replacement-covered-under-ayushman-bharat-yojana-this-is-what-govt-says",
-      "source_type": "news_report",
-      "published_on": "2025-12-06",
-      "accessed_on": "2026-10-29",
-      "notes": "Reports a Lok Sabha reply stating knee replacement (primary and revision) is listed under the Orthopaedics speciality of AB PM-JAY. The official reply itself was not accessed."
     },
     {
       "id": "src-manipur-grievance",
@@ -170,6 +160,56 @@
       "published_on": null,
       "accessed_on": "2026-10-29",
       "notes": "Lists MJPJAY, AB-PMJAY, PMNRF and CMRF among schemes; scheme help at the Medical Social Services Department (Golden Jubilee Block, ground floor); adult haematology clinics for acute leukaemia and CML; board line 022 2417 7000."
+    },
+    {
+      "id": "src-ls-au720",
+      "title": "Lok Sabha Unstarred Question No. 720 (health insurance for senior citizens)",
+      "publisher": "Ministry of Health and Family Welfare, answered in Lok Sabha",
+      "url": "https://eparlib.sansad.in/bitstream/123456789/2983600/1/AU720_T12thL.pdf",
+      "source_type": "official_primary",
+      "published_on": "2024-11-29",
+      "accessed_on": "2026-10-29",
+      "notes": "AB PM-JAY covers 1,961 procedures across 27 specialties including Orthopaedics; names Total Hip Replacement, Total Knee Replacement and PTCA among services available to eligible senior citizens; states may customise packages."
+    },
+    {
+      "id": "src-punjab-sha-hbp20",
+      "title": "HBP 2.0 packages reserved for government hospitals under AB-SSBY (20 Aug 2020 – 19 Aug 2021)",
+      "publisher": "State Health Agency, Punjab",
+      "url": "https://sha.punjab.gov.in/Security_audit/shapunjab/downloadfiles/letters/Order_reagrding_25_packages_HBP20.pdf",
+      "source_type": "official_secondary",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Historical (2020–21) Punjab list. Shows HBP 2.0 package SB039 'Total Knee Replacement – Primary' and '– Revision'. Used only for the package code and as an example that states can reserve packages for public hospitals; not a current rule."
+    },
+    {
+      "id": "src-sha-kerala-kasp",
+      "title": "Karunya Arogya Suraksha Padhathi (KASP)",
+      "publisher": "State Health Agency Kerala, Government of Kerala",
+      "url": "https://sha.kerala.gov.in/?page_id=110&lang=en",
+      "source_type": "official_primary",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "₹5 lakh per family per year, family floater, cashless; ~42 lakh families in the bottom 40% (SECC 2011 criteria); no cap on family size or age; ~1,573 procedures; RSBY, CHIS, SCHIS and KBF merged in; state implements in trust mode since 1 Jul 2020; helpline 0471 4063121."
+    },
+    {
+      "id": "src-sha-kerala-kbf",
+      "title": "Karunya Benevolent Fund (KBF)",
+      "publisher": "State Health Agency Kerala, Government of Kerala",
+      "url": "https://sha.kerala.gov.in/?page_id=2961&lang=en",
+      "source_type": "official_primary",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Revamped KBF integrated with KASP/PM-JAY: cancer, haemophilia, kidney and heart disease, palliative care; annual family income below ₹3 lakh; KASP packages incl. 15 days post-discharge medicines; ration card with income proof; apply directly at a KASP-empanelled hospital, cashless. Old lottery-run limits: ₹2 lakh tertiary, ₹3 lakh kidney."
+    },
+    {
+      "id": "src-dhn-kerala-uhc",
+      "title": "Kerala Gov Clears Universal Health Coverage Plan to Bridge Insurance Gaps",
+      "publisher": "Digital Health News (news report)",
+      "url": "https://www.digitalhealthnews.com/kerala-gov-clears-universal-health-coverage-plan-to-bridge-insurance-gaps",
+      "source_type": "news_report",
+      "published_on": "2026-08-13",
+      "accessed_on": "2026-10-29",
+      "notes": "Reports in-principle approval of a 'Health Protection for All' programme for residents outside KASP/KBF/MEDISEP; no start date. Describes KBF as up to ₹2 lakh (plus ₹1 lakh for kidney disease) for families under ₹3 lakh income not in KASP."
     }
   ],
   "medical_needs": [
@@ -278,7 +318,8 @@
       "uncertainty_notes": [
         "Whether a particular family is a beneficiary can only be confirmed against the official database.",
         "Package rates are revised periodically (HBP versions) and some states set their own rates.",
-        "pmjay.gov.in and beneficiary.nha.gov.in are official NHA domains, but our automated check on 2026-10-29 could not read their pages."
+        "pmjay.gov.in and beneficiary.nha.gov.in are official NHA domains, but our automated check on 2026-10-29 could not read their pages.",
+        "States can customise the package list. For example, Punjab's 2020–21 list reserved knee replacement (SB039) for government hospitals — check your state's current rules."
       ],
       "is_demo": false,
       "source_ids": [
@@ -287,7 +328,9 @@
         "src-nha-hbp20",
         "src-ls-au2641",
         "src-aiimsbbsr-pmjay-doc",
-        "src-manipur-grievance"
+        "src-manipur-grievance",
+        "src-ls-au720",
+        "src-punjab-sha-hbp20"
       ]
     },
     {
@@ -354,7 +397,8 @@
       "source_ids": [
         "src-nha-70plus",
         "src-pib-pmjay-6yrs",
-        "src-aiimsbbsr-pmjay-doc"
+        "src-aiimsbbsr-pmjay-doc",
+        "src-ls-au720"
       ]
     },
     {
@@ -648,6 +692,153 @@
         "src-pmnrf",
         "src-gcri-pmnrf"
       ]
+    },
+    {
+      "id": "kl-kasp",
+      "official_name": "Karunya Arogya Suraksha Padhathi (KASP)",
+      "short_name": "KASP",
+      "issuing_authority": "State Health Agency Kerala, Government of Kerala",
+      "scope": "state",
+      "applicable_states": [
+        "KL"
+      ],
+      "summary": "Kerala's health assurance scheme, run alongside AB PM-JAY: cashless secondary and tertiary hospitalisation for covered families at empanelled hospitals.",
+      "intended_beneficiaries": "About 42 lakh families (around 64 lakh people) in the bottom 40% of Kerala's population, identified using SECC 2011 deprivation and occupational criteria. Earlier schemes (RSBY, CHIS, SCHIS) were merged into KASP.",
+      "benefit_amount_inr": 500000,
+      "benefit_unit": "per family per year, shared by all members (floater)",
+      "benefit_mechanism": "cashless_package",
+      "payment_recipient": "hospital",
+      "benefit_details": [
+        {
+          "text": "Health cover of up to ₹5 lakh per family per year for secondary and tertiary care hospitalisation, on a family-floater basis.",
+          "source_id": "src-sha-kerala-kasp"
+        },
+        {
+          "text": "Cashless at the point of service in empanelled hospitals.",
+          "source_id": "src-sha-kerala-kasp"
+        },
+        {
+          "text": "No cap on family size or on the age of members.",
+          "source_id": "src-sha-kerala-kasp"
+        },
+        {
+          "text": "Covers approximately 1,573 procedures.",
+          "source_id": "src-sha-kerala-kasp"
+        }
+      ],
+      "patient_costs_note": "₹5 lakh is a yearly ceiling shared by the family, not money paid to you. Care outside the approved package or at a non-empanelled hospital may not be covered. Ask the hospital's scheme desk what is included before admission.",
+      "application_channel": "Through a KASP-empanelled hospital. The State Health Agency can confirm whether a family is covered.",
+      "application_steps": [
+        {
+          "text": "Before admission, ask a KASP-empanelled hospital's scheme desk whether the family is covered.",
+          "source_id": null
+        },
+        {
+          "text": "For questions about coverage, contact the State Health Agency Kerala.",
+          "source_id": "src-sha-kerala-kasp"
+        }
+      ],
+      "application_url": null,
+      "application_url_status": "not_verified",
+      "info_url": "https://sha.kerala.gov.in/?page_id=110&lang=en",
+      "hospital_directory_url": null,
+      "helpdesk": [
+        {
+          "text": "State Health Agency Kerala: 0471 4063121",
+          "source_id": "src-sha-kerala-kasp"
+        },
+        {
+          "text": "Email: statehealthagencykerala@gmail.com",
+          "source_id": "src-sha-kerala-kasp"
+        }
+      ],
+      "verification_status": "partially_verified",
+      "last_verified_on": "2026-10-29",
+      "source_updated_on": null,
+      "uncertainty_notes": [
+        "Whether a family is covered can only be confirmed by the State Health Agency or an empanelled hospital.",
+        "The official page doesn't list individual packages, so we haven't verified that knee replacement, angioplasty or leukaemia treatment are among the ~1,573 procedures.",
+        "We could not find an official online application or hospital-search page.",
+        "Kerala has reportedly approved, in principle, a separate 'Health Protection for All' programme for residents outside existing schemes (news report, Aug 2026). No start date was given."
+      ],
+      "is_demo": false,
+      "source_ids": [
+        "src-sha-kerala-kasp",
+        "src-dhn-kerala-uhc"
+      ]
+    },
+    {
+      "id": "kl-kbf",
+      "official_name": "Karunya Benevolent Fund (KBF)",
+      "short_name": "KBF",
+      "issuing_authority": "State Health Agency Kerala, Government of Kerala",
+      "scope": "state",
+      "applicable_states": [
+        "KL"
+      ],
+      "summary": "Kerala's treatment fund for serious illness — cancer, haemophilia, kidney and heart disease, and palliative care — now run with KASP: cashless treatment at KASP-empanelled hospitals for families with annual income below ₹3 lakh.",
+      "intended_beneficiaries": "Patients with cancer, haemophilia, kidney or heart disease, or needing palliative care, from families with an annual income of less than ₹3 lakh.",
+      "benefit_amount_inr": null,
+      "benefit_unit": "No current limit is stated on the official page",
+      "benefit_mechanism": "cashless_package",
+      "payment_recipient": "hospital",
+      "benefit_details": [
+        {
+          "text": "Covers secondary and tertiary care under KASP packages, including hospitalisation or day-care charges and medicines for 15 days after discharge.",
+          "source_id": "src-sha-kerala-kbf"
+        },
+        {
+          "text": "Treatment is cashless at KASP-empanelled hospitals.",
+          "source_id": "src-sha-kerala-kbf"
+        },
+        {
+          "text": "For context only: under the earlier scheme run by the State Lotteries Department, limits were ₹2 lakh for tertiary care and ₹3 lakh for kidney ailments. The official page does not say these limits apply to the revamped fund.",
+          "source_id": "src-sha-kerala-kbf"
+        },
+        {
+          "text": "A news report (Aug 2026) describes KBF as offering up to ₹2 lakh, plus up to ₹1 lakh for kidney disease. This is not confirmed on the official page.",
+          "source_id": "src-dhn-kerala-uhc"
+        }
+      ],
+      "patient_costs_note": "The official page doesn't state a current limit, so we can't say how much will be covered. Ask the hospital's scheme desk before admission.",
+      "application_channel": "Apply directly at a KASP-empanelled hospital; it is processed through the scheme's IT system.",
+      "application_steps": [
+        {
+          "text": "Go to a KASP-empanelled hospital and ask for Karunya Benevolent Fund assistance.",
+          "source_id": "src-sha-kerala-kbf"
+        },
+        {
+          "text": "Bring the family's ration card with proof of income.",
+          "source_id": "src-sha-kerala-kbf"
+        },
+        {
+          "text": "The hospital processes the request through the scheme's IT-integrated system. Treatment is cashless once approved.",
+          "source_id": "src-sha-kerala-kbf"
+        }
+      ],
+      "application_url": null,
+      "application_url_status": "not_verified",
+      "info_url": "https://sha.kerala.gov.in/?page_id=2961&lang=en",
+      "hospital_directory_url": null,
+      "helpdesk": [
+        {
+          "text": "State Health Agency Kerala: 0471 4063121",
+          "source_id": "src-sha-kerala-kbf"
+        }
+      ],
+      "verification_status": "partially_verified",
+      "last_verified_on": "2026-10-29",
+      "source_updated_on": null,
+      "uncertainty_notes": [
+        "The official page does not state a current benefit limit for the revamped fund.",
+        "A news report says KBF is for families not covered by KASP; the official page doesn't say this. The hospital or State Health Agency will confirm.",
+        "Whether a particular treatment is covered depends on the KASP package list, which we haven't verified procedure by procedure."
+      ],
+      "is_demo": false,
+      "source_ids": [
+        "src-sha-kerala-kbf",
+        "src-dhn-kerala-uhc"
+      ]
     }
   ],
   "scheme_treatments": [
@@ -668,9 +859,9 @@
     {
       "scheme_id": "pmjay-family",
       "medical_need_id": "knee-replacement",
-      "coverage_level": "secondary_source",
-      "coverage_note": "A news report of a December 2025 Lok Sabha reply says knee replacement (primary and revision) is listed under Orthopaedics. We could not access the official reply or package list.",
-      "source_id": "src-outlook-knee"
+      "coverage_level": "procedure_verified",
+      "coverage_note": "A Ministry of Health reply in Lok Sabha (29 Nov 2024) names Total Knee Replacement among AB PM-JAY services, under the Orthopaedics specialty. The HBP 2.0 package code is SB039 (primary and revision). States may customise packages — some have reserved knee replacement for government hospitals — so confirm at the hospital's Ayushman desk.",
+      "source_id": "src-ls-au720"
     },
     {
       "scheme_id": "pmjay-senior-70",
@@ -689,9 +880,9 @@
     {
       "scheme_id": "pmjay-senior-70",
       "medical_need_id": "knee-replacement",
-      "coverage_level": "secondary_source",
-      "coverage_note": "A news report of a December 2025 Lok Sabha reply says knee replacements have been authorised for senior citizens under AB PM-JAY. The official reply was not accessed.",
-      "source_id": "src-outlook-knee"
+      "coverage_level": "procedure_verified",
+      "coverage_note": "A Ministry of Health reply in Lok Sabha (29 Nov 2024) on cover for senior citizens names Total Knee Replacement among the services available to them under AB PM-JAY. States may customise packages, so confirm at the hospital's Ayushman desk.",
+      "source_id": "src-ls-au720"
     },
     {
       "scheme_id": "mh-mjpjay-integrated",
@@ -755,6 +946,41 @@
       "coverage_level": "unverified",
       "coverage_note": "Heart surgery is named; whether angioplasty qualifies is decided by the fund.",
       "source_id": "src-pmnrf"
+    },
+    {
+      "scheme_id": "kl-kasp",
+      "medical_need_id": "knee-replacement",
+      "coverage_level": "unverified",
+      "coverage_note": "KASP covers about 1,573 procedures; we did not verify that knee replacement is one of them.",
+      "source_id": "src-sha-kerala-kasp"
+    },
+    {
+      "scheme_id": "kl-kasp",
+      "medical_need_id": "angioplasty",
+      "coverage_level": "unverified",
+      "coverage_note": "KASP covers about 1,573 procedures; we did not verify that angioplasty is one of them.",
+      "source_id": "src-sha-kerala-kasp"
+    },
+    {
+      "scheme_id": "kl-kasp",
+      "medical_need_id": "leukemia",
+      "coverage_level": "unverified",
+      "coverage_note": "KASP covers about 1,573 procedures; we did not verify that leukaemia treatment is one of them.",
+      "source_id": "src-sha-kerala-kasp"
+    },
+    {
+      "scheme_id": "kl-kbf",
+      "medical_need_id": "leukemia",
+      "coverage_level": "category_verified",
+      "coverage_note": "Cancer is named among the conditions KBF supports. The exact package depends on the type of leukaemia and the treatment.",
+      "source_id": "src-sha-kerala-kbf"
+    },
+    {
+      "scheme_id": "kl-kbf",
+      "medical_need_id": "angioplasty",
+      "coverage_level": "unverified",
+      "coverage_note": "Heart disease is named among the conditions KBF supports; whether a particular angioplasty is covered depends on the KASP package list.",
+      "source_id": "src-sha-kerala-kbf"
     }
   ],
   "scheme_eligibility_rules": [
@@ -1004,6 +1230,108 @@
       "official_text": "Assistance is for needy people; the fund decides eligibility and the amount for each case.",
       "source_id": "src-pmnrf",
       "sort_order": 1
+    },
+    {
+      "id": "kl-kasp-residence",
+      "scheme_id": "kl-kasp",
+      "criterion": "residence",
+      "definition": {
+        "type": "residence_state",
+        "states": [
+          "KL"
+        ]
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "For families in Kerala (the bottom 40% of the state's population).",
+      "source_id": "src-sha-kerala-kasp",
+      "sort_order": 1
+    },
+    {
+      "id": "kl-kasp-household",
+      "scheme_id": "kl-kasp",
+      "criterion": "beneficiary_status",
+      "definition": {
+        "type": "requires_official_check"
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "The family must be one of the households covered by KASP, identified using SECC 2011 deprivation and occupational criteria.",
+      "source_id": "src-sha-kerala-kasp",
+      "sort_order": 2
+    },
+    {
+      "id": "kl-kasp-age",
+      "scheme_id": "kl-kasp",
+      "criterion": "age",
+      "definition": {
+        "type": "no_restriction",
+        "note": "No cap on family size or on members' age."
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "There is no cap on family size or age of members.",
+      "source_id": "src-sha-kerala-kasp",
+      "sort_order": 3
+    },
+    {
+      "id": "kl-kbf-residence",
+      "scheme_id": "kl-kbf",
+      "criterion": "residence",
+      "definition": {
+        "type": "residence_state",
+        "states": [
+          "KL"
+        ]
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "A Kerala State Health Agency fund; applicants show a ration card with proof of income.",
+      "source_id": "src-sha-kerala-kbf",
+      "sort_order": 1
+    },
+    {
+      "id": "kl-kbf-income",
+      "scheme_id": "kl-kbf",
+      "criterion": "income",
+      "definition": {
+        "type": "income_max",
+        "maxAnnualIncomeInr": 300000,
+        "exclusive": true
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "Annual family income of less than ₹3 lakh.",
+      "source_id": "src-sha-kerala-kbf",
+      "sort_order": 2
+    },
+    {
+      "id": "kl-kbf-document",
+      "scheme_id": "kl-kbf",
+      "criterion": "beneficiary_status",
+      "definition": {
+        "type": "state_beneficiary_document",
+        "state": "KL",
+        "description": "a Kerala ration card, with proof of income"
+      },
+      "mandatory": true,
+      "any_of_group": null,
+      "official_text": "A ration card with income proof is required.",
+      "source_id": "src-sha-kerala-kbf",
+      "sort_order": 3
+    },
+    {
+      "id": "kl-kbf-not-kasp",
+      "scheme_id": "kl-kbf",
+      "criterion": "other",
+      "definition": {
+        "type": "informational"
+      },
+      "mandatory": false,
+      "any_of_group": null,
+      "official_text": "Reported (news, Aug 2026) to be for families not covered under KASP. Not stated on the official page.",
+      "source_id": "src-dhn-kerala-uhc",
+      "sort_order": 4
     }
   ],
   "scheme_documents": [
@@ -1150,6 +1478,30 @@
       "source_id": null,
       "is_provisional": true,
       "sort_order": 1
+    },
+    {
+      "scheme_id": "kl-kasp",
+      "document": "Photo ID and whatever proof of coverage the hospital or State Health Agency asks for",
+      "note": "Generic preparation checklist. KASP's official document list was not verified.",
+      "source_id": null,
+      "is_provisional": true,
+      "sort_order": 1
+    },
+    {
+      "scheme_id": "kl-kbf",
+      "document": "Ration card with proof of income",
+      "note": null,
+      "source_id": "src-sha-kerala-kbf",
+      "is_provisional": false,
+      "sort_order": 1
+    },
+    {
+      "scheme_id": "kl-kbf",
+      "document": "Treating doctor's diagnosis and the hospital's treatment plan",
+      "note": "Generic preparation checklist, not from the official page.",
+      "source_id": null,
+      "is_provisional": true,
+      "sort_order": 2
     }
   ],
   "hospitals": [

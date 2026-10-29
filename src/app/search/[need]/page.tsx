@@ -49,7 +49,13 @@ export default async function SearchPage({ params }: PageProps<"/search/[need]">
     ),
     incomeThresholds: rules.flatMap((r) =>
       r.definition.type === "income_max"
-        ? [{ amount: r.definition.maxAnnualIncomeInr, scheme: data.schemes.find((s) => s.id === r.schemeId)?.shortName ?? r.schemeId }]
+        ? [
+            {
+              amount: r.definition.maxAnnualIncomeInr,
+              exclusive: r.definition.exclusive ?? false,
+              scheme: data.schemes.find((s) => s.id === r.schemeId)?.shortName ?? r.schemeId,
+            },
+          ]
         : [],
     ),
     asksSocialCategory: rules.some((r) => r.definition.type === "social_category"),

@@ -66,6 +66,10 @@ describe("income comparison", () => {
   it("prefers an exact figure", () => {
     expect(compareIncomeToMax({ rangeId: "gt_10l", exactInr: 120_000 }, 125_000).outcome).toBe("MATCH");
     expect(compareIncomeToMax({ rangeId: null, exactInr: 125_001 }, 125_000).outcome).toBe("DOES_NOT_MATCH");
+    // "Less than" limits exclude the boundary itself, for exact figures and ranges alike.
+    expect(compareIncomeToMax({ rangeId: null, exactInr: 300_000 }, 300_000, true).outcome).toBe("DOES_NOT_MATCH");
+    expect(compareIncomeToMax({ rangeId: "1l_2_5l", exactInr: null }, 250_000, true).outcome).toBe("UNKNOWN");
+    expect(compareIncomeToMax({ rangeId: "1l_2_5l", exactInr: null }, 250_000).outcome).toBe("MATCH");
   });
 
   it("asks for an exact figure when a range straddles the threshold", () => {
@@ -112,11 +116,31 @@ describe("matching against the seeded dataset", () => {
     expect(find(results, "pmjay-senior-70")?.overall).toBe("does_not_match");
   });
 
-  it("does not call knee replacement under PM-JAY a confirmed match while coverage is secondary-sourced", () => {
+  it("treats knee replacement under the 70+ route as officially covered (Lok Sabha reply), so a 75-year-old is a potential match", () => {
     const results = runMatching(data, criteria({ needId: "knee-replacement", age: 75 }));
     const senior = find(results, "pmjay-senior-70");
-    expect(senior?.overall).toBe("needs_verification");
-    expect(senior?.evaluations.find((e) => e.criterion === "treatment")?.display).toBe("requires_verification");
+    expect(senior?.overall).toBe("potential_match");
+    expect(senior?.evaluations.find((e) => e.criterion === "treatment")?.display).toBe("meets");
+  });
+
+  it("still needs verification for knee replacement under family PM-JAY when beneficiary status is unknown", () => {
+    const results = runMatching(data, criteria({ needId: "knee-replacement", age: 50 }));
+    expect(find(results, "pmjay-family")?.overall).toBe("needs_verification");
+  });
+
+  it("never matches Kerala's KASP outright, because household coverage needs an official check", () => {
+    const results = runMatching(data, criteria({ needId: "angioplasty", residenceState: "KL" }));
+    expect(find(results, "kl-kasp")?.overall).toBe("needs_verification");
+    const outside = runMatching(data, criteria({ needId: "angioplasty", residenceState: "MH" }));
+    expect(find(outside, "kl-kasp")?.overall).toBe("does_not_match");
+  });
+
+  it("applies KBF's 'less than ₹3 lakh' limit strictly", () => {
+    const base = { needId: "leukemia", residenceState: "KL", stateBeneficiaryDocument: "yes" } as const;
+    const at = runMatching(data, criteria({ ...base, income: { rangeId: null, exactInr: 300_000 } }));
+    expect(find(at, "kl-kbf")?.overall).toBe("does_not_match");
+    const below = runMatching(data, criteria({ ...base, income: { rangeId: null, exactInr: 299_999 } }));
+    expect(find(below, "kl-kbf")?.overall).toBe("potential_match");
   });
 
   it("excludes the Maharashtra scheme for residents of other states", () => {
@@ -133,7 +157,7 @@ describe("matching against the seeded dataset", () => {
 
   it("only returns schemes mapped to the selected need", () => {
     const results = runMatching(data, criteria({ needId: "knee-replacement" }));
-    expect(results.map((r) => r.scheme.id).sort()).toEqual(["mh-mjpjay-integrated", "pmjay-family", "pmjay-senior-70"]);
+    expect(results.map((r) => r.scheme.id).sort()).toEqual(["kl-kasp", "mh-mjpjay-integrated", "pmjay-family", "pmjay-senior-70"]);
   });
 
   it("returns nothing for an unknown need", () => {

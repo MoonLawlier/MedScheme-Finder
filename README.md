@@ -71,6 +71,8 @@ When a flag is off, the button explains the provider isn't configured instead of
 
 Playwright needs a Chromium. Run `npx playwright install chromium`, or point at an existing binary with `PLAYWRIGHT_CHROMIUM_PATH=/path/to/chromium npm run test:e2e`.
 
+Income rules support `"exclusive": true` for limits written as "less than" (e.g. KBF), so the boundary amount itself doesn't match.
+
 ## Routes
 
 | Route | Purpose |
@@ -137,6 +139,10 @@ All facts were checked on **29 Oct 2026**. Every row links to a source in `refer
 | HMCPF | National | Up to ₹15 lakh for cancer patients below poverty line at RCCs/TCCCs/SCIs | [Lok Sabha AU5561 (Apr 2025)](https://eparlib.sansad.in/bitstream/123456789/3010946/1/AU5561_tNqey7.pdf) |
 | HMDG | National | Up to ₹1.25 lakh, family income ≤ ₹1.25 lakh | [PIB 22 Jul 2022](https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1843846&reg=48&lang=2) — record flagged `requires_verification` |
 | PMNRF | National | Partial assistance for heart surgery, kidney transplant, cancer; no amount published | [pmnrf.gov.in](https://pmnrf.gov.in/) |
+| KASP | Kerala | ₹5 lakh/family/year floater, cashless, bottom-40% families (SECC 2011), no age/family-size cap, ~1,573 procedures, helpline | [SHA Kerala – KASP](https://sha.kerala.gov.in/?page_id=110&lang=en) |
+| Karunya Benevolent Fund | Kerala | Cancer, haemophilia, kidney, heart disease, palliative care; income **less than** ₹3 lakh; cashless at KASP hospitals; ration card + income proof. No current amount on the official page (old ₹2 lakh / ₹3 lakh limits shown as history only) | [SHA Kerala – KBF](https://sha.kerala.gov.in/?page_id=2961&lang=en) |
+
+Knee replacement under PM-JAY (family and 70+) is backed by [Lok Sabha Unstarred Q.720, 29 Nov 2024](https://eparlib.sansad.in/bitstream/123456789/2983600/1/AU720_T12thL.pdf), which names Total Knee Replacement among AB PM-JAY services for senior citizens. The HBP 2.0 package code SB039 comes from a [Punjab SHA list](https://sha.punjab.gov.in/Security_audit/shapunjab/downloadfiles/letters/Order_reagrding_25_packages_HBP20.pdf) (historical, 2020–21), shown only as context about states reserving packages for government hospitals.
 
 Hospitals (3), each traced to a source:
 
@@ -148,10 +154,9 @@ Hospital coordinates are approximate public-map values and are labelled as such 
 
 ### Known gaps (shown honestly in the UI)
 
-- **Knee replacement under PM-JAY** is supported only by a news report of a Dec 2025 Lok Sabha reply → shown as *needs official check*, never as a match.
-- Procedure-level coverage under the Maharashtra scheme isn't verified.
+- Procedure-level coverage under the Maharashtra and Kerala (KASP) schemes isn't verified.
 - `pmjay.gov.in`, `beneficiary.nha.gov.in`, `hospitals.pmjay.gov.in`, `jeevandayee.gov.in` and the 2019 RAN guidelines blocked automated fetching; links point to these official domains with a note to confirm details there.
-- No state schemes outside Maharashtra yet; the State filter shows a clear empty state.
+- State schemes cover Maharashtra and Kerala only. Tamil Nadu's CMCHIS was investigated but left out: its official portal didn't load, and the reported Aug 2026 rise from ₹5 lakh to ₹25 lakh had no government order behind it. Other states show a clear empty state.
 - HMCPF / HMDG / PMNRF application processes and document lists weren't available; only provisional, clearly labelled checklists are shown.
 
 ## Adding a need or scheme

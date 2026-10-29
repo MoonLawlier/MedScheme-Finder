@@ -114,7 +114,7 @@ export type Criterion =
 /** Structured rule definitions. Each maps to a deterministic evaluator. */
 export type RuleDefinition =
   | { type: "age_range"; min?: number; max?: number }
-  | { type: "income_max"; maxAnnualIncomeInr: number }
+  | { type: "income_max"; maxAnnualIncomeInr: number; exclusive?: boolean } // exclusive: "less than" rather than "up to"
   | { type: "residence_state"; states: string[] }
   | { type: "social_category"; categories: SocialCategory[] }
   | { type: "pmjay_beneficiary"; accepted: PmjayStatus[] }

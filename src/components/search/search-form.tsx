@@ -2,7 +2,7 @@
 import { ArrowLeft, Crosshair, Lock, RotateCcw, Save, Search, UserRound, Users } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState, useTransition, type FormEvent, type ReactNode } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore, useTransition, type FormEvent, type ReactNode } from "react";
 import { saveSearchAnswersToProfile } from "@/app/actions/profile";
 import { runSearch } from "@/app/actions/search";
 import { useMode } from "@/components/layout/mode-provider";
@@ -20,7 +20,7 @@ import { cn, formatInr } from "@/lib/utils/cn";
 export interface FormConfig {
   stateDocumentStates: string[];
   stateDocumentDescriptions: Record<string, string>;
-  incomeThresholds: { amount: number; scheme: string }[];
+  incomeThresholds: { amount: number; exclusive: boolean; scheme: string }[];
   asksSocialCategory: boolean;
   asksPmjayStatus: boolean;
 }
@@ -95,8 +95,21 @@ interface Props {
   prefill: ProfilePrefill | null;
 }
 
+const noopSubscribe = () => () => {};
+
 export function SearchForm(props: Props) {
   const { mode } = useMode();
+  // The draft lives in sessionStorage, which the server can't see. Render the
+  // form only after hydration so server and client output always agree.
+  const hydrated = useSyncExternalStore(noopSubscribe, () => true, () => false);
+  if (!hydrated) {
+    return (
+      <div className="mx-auto max-w-5xl space-y-4" aria-busy="true" aria-label="Loading search form">
+        <div className="h-8 w-2/3 animate-pulse rounded-lg bg-line" />
+        <div className="h-64 animate-pulse rounded-2xl bg-line/70" />
+      </div>
+    );
+  }
   // Remount per mode so profile data can never leak into an Open-mode form.
   return <SearchFormInner key={`${mode}:${props.need.id}`} mode={mode} {...props} />;
 }
@@ -150,7 +163,10 @@ function SearchFormInner({ need, needs, fields, config, prefill, mode }: Props &
 
   const range = INCOME_RANGES.find((r) => r.id === draft.incomeRangeId);
   const straddled = range
-    ? config.incomeThresholds.filter((t) => range.min <= t.amount && (range.max === null || range.max > t.amount))
+    ? config.incomeThresholds.filter(
+        // Same boundary logic as the engine: ask only when the range straddles the limit.
+        (t) => range.min <= t.amount && (range.max === null || (t.exclusive ? range.max >= t.amount : range.max > t.amount)),
+      )
     : [];
   const askStateDoc = config.stateDocumentStates.includes(draft.residenceState);
   const status = draft.needDetails.status;
