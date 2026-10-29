@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29.3",
+  "version": "2026-10-29.4",
   "sources": [
     {
       "id": "src-pib-pmjay-6yrs",
@@ -210,6 +210,46 @@
       "published_on": "2026-08-13",
       "accessed_on": "2026-10-29",
       "notes": "Reports in-principle approval of a 'Health Protection for All' programme for residents outside KASP/KBF/MEDISEP; no start date. Describes KBF as up to ₹2 lakh (plus ₹1 lakh for kidney disease) for families under ₹3 lakh income not in KASP."
+    },
+    {
+      "id": "src-mjpjay-1356",
+      "title": "1356 – Package Master (Integrated MJPJAY / AB PM-JAY)",
+      "publisher": "State Health Assurance Society, Maharashtra (jeevandayee.gov.in)",
+      "url": "https://www.jeevandayee.gov.in/MJPJAY/RGJAYDocuments/1356%20-%20Package%20Master.pdf",
+      "source_type": "official_primary",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Read up to row 546 (our text extraction is capped; Orthopaedics comes later and was not reached). Cardiology M7: Coronary Balloon Angioplasty M7F1.1 ₹60,000; PTCA Additional Stent M7F1.2 ₹20,000. Haemato Oncology M19: AML induction/consolidation (M19U3.1/.2), ALL induction/consolidation/maintenance (M19U2.x), APML/ATO-ATRA regimens, BFM/MCP-841 protocols."
+    },
+    {
+      "id": "src-mjpjay-hospitals",
+      "title": "List of Empanelled hospital under Mahatma Jyotiba Phule Jan Arogya Yojana",
+      "publisher": "State Health Assurance Society, Maharashtra (jeevandayee.gov.in)",
+      "url": "https://www.jeevandayee.gov.in/RGJAYDocuments/Empanelled_Hospitals_Under_MJPJAY.pdf",
+      "source_type": "official_primary",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Undated list (about 490 hospitals, district / location / name / Pvt-Govt / single-multi). It does not list specialities, and empanelment changes over time."
+    },
+    {
+      "id": "src-aiimsngp-joint",
+      "title": "AIIMS Nagpur achieves landmark 550 joint replacements under the MJPJAY & PMJAY schemes",
+      "publisher": "AIIMS Nagpur (aiimsnagpur.edu.in)",
+      "url": "https://aiimsnagpur.edu.in/news/news/550-joint-replacement-surgeries-done-under-department-of-orthopedics%2C-aiims-nagpur",
+      "source_type": "hospital_official",
+      "published_on": null,
+      "accessed_on": "2026-10-29",
+      "notes": "Undated hospital news: Department of Orthopaedics performed total knee, hip and shoulder replacements over three years under MJPJAY and PMJAY, free for economically weaker sections. Address and helpline from the institute's CPIO page."
+    },
+    {
+      "id": "src-sha-kerala-contract",
+      "title": "AB PM-JAY–KASP: Schedules to Service Contract",
+      "publisher": "State Health Agency Kerala / Department of Health & Family Welfare, Government of Kerala",
+      "url": "https://sha.kerala.gov.in/wp-content/uploads/2020/12/Pub-EHCP-claims-Schedules-to-contract.pdf",
+      "source_type": "official_primary",
+      "published_on": "2020-12-24",
+      "accessed_on": "2026-10-29",
+      "notes": "Schedule 3(a) names the HBP 2.0 package list as KASP's package list (enclosed separately; not available to us). Historical (2020) — the current Kerala list may differ."
     }
   ],
   "medical_needs": [
@@ -330,7 +370,8 @@
         "src-aiimsbbsr-pmjay-doc",
         "src-manipur-grievance",
         "src-ls-au720",
-        "src-punjab-sha-hbp20"
+        "src-punjab-sha-hbp20",
+        "src-aiimsngp-joint"
       ]
     },
     {
@@ -398,7 +439,8 @@
         "src-nha-70plus",
         "src-pib-pmjay-6yrs",
         "src-aiimsbbsr-pmjay-doc",
-        "src-ls-au720"
+        "src-ls-au720",
+        "src-aiimsngp-joint"
       ]
     },
     {
@@ -432,6 +474,10 @@
         {
           "text": "Packages include one-time transport, and transport of the body if the patient dies.",
           "source_id": "src-iggmc-integrated"
+        },
+        {
+          "text": "Reference rates in the 1,356-package master: Coronary Balloon Angioplasty (M7F1.1) ₹60,000; each additional PTCA stent (M7F1.2) ₹20,000. Rates are paid to the hospital and may be revised.",
+          "source_id": "src-mjpjay-1356"
         }
       ],
       "patient_costs_note": "The ₹5 lakh is a family ceiling, not a payment to you. Procedures outside the listed packages and non-network hospitals are not covered by the scheme.",
@@ -464,13 +510,17 @@
       "last_verified_on": "2026-10-29",
       "source_updated_on": null,
       "uncertainty_notes": [
-        "Facts come from a government medical college's published summary; the scheme's own portal (jeevandayee.gov.in) could not be read by our checker.",
+        "Most scheme facts come from a government medical college's summary; the package master and hospital list are read from jeevandayee.gov.in.",
         "An older page on jeevandayee.gov.in still describes the earlier ₹1.5 lakh scheme. That is historical and is not used here.",
-        "Whether a specific procedure is among the 1,356 packages was not verified."
+        "Angioplasty and leukaemia packages are confirmed in the package master; knee replacement is only reported by a hospital, because our reading of the master stopped before Orthopaedics.",
+        "The official empanelled-hospital list we used is undated and has no specialities. Check the current list or ask the Arogyamitra desk."
       ],
       "is_demo": false,
       "source_ids": [
-        "src-iggmc-integrated"
+        "src-iggmc-integrated",
+        "src-mjpjay-1356",
+        "src-mjpjay-hospitals",
+        "src-aiimsngp-joint"
       ]
     },
     {
@@ -764,7 +814,8 @@
       "is_demo": false,
       "source_ids": [
         "src-sha-kerala-kasp",
-        "src-dhn-kerala-uhc"
+        "src-dhn-kerala-uhc",
+        "src-sha-kerala-contract"
       ]
     },
     {
@@ -887,23 +938,23 @@
     {
       "scheme_id": "mh-mjpjay-integrated",
       "medical_need_id": "knee-replacement",
-      "coverage_level": "unverified",
-      "coverage_note": "The scheme covers 1,356 packages across 34 specialties; we did not verify that knee replacement is one of them.",
-      "source_id": "src-iggmc-integrated"
+      "coverage_level": "secondary_source",
+      "coverage_note": "AIIMS Nagpur reports performing total knee replacements under MJPJAY and PM-JAY. The official package master we could read stops before its Orthopaedics section, so the package itself isn't confirmed.",
+      "source_id": "src-aiimsngp-joint"
     },
     {
       "scheme_id": "mh-mjpjay-integrated",
       "medical_need_id": "angioplasty",
-      "coverage_level": "unverified",
-      "coverage_note": "The scheme covers 1,356 packages across 34 specialties; we did not verify that angioplasty is one of them.",
-      "source_id": "src-iggmc-integrated"
+      "coverage_level": "procedure_verified",
+      "coverage_note": "The scheme's 1,356-package master lists Coronary Balloon Angioplasty (M7F1.1) and PTCA Additional Stent (M7F1.2) under Cardiology.",
+      "source_id": "src-mjpjay-1356"
     },
     {
       "scheme_id": "mh-mjpjay-integrated",
       "medical_need_id": "leukemia",
-      "coverage_level": "unverified",
-      "coverage_note": "The scheme covers 1,356 packages across 34 specialties; we did not verify which leukaemia treatments are included. Tata Memorial Hospital lists MJPJAY among the schemes it handles.",
-      "source_id": "src-tmh-booklet"
+      "coverage_level": "procedure_verified",
+      "coverage_note": "The scheme's 1,356-package master lists Haemato-Oncology packages for acute myeloid leukaemia, acute lymphoblastic leukaemia and APML (e.g. M19U3.1 AML induction, M19U2.2 ALL induction). The package used depends on the leukaemia type and protocol.",
+      "source_id": "src-mjpjay-1356"
     },
     {
       "scheme_id": "ran-umbrella",
@@ -951,22 +1002,22 @@
       "scheme_id": "kl-kasp",
       "medical_need_id": "knee-replacement",
       "coverage_level": "unverified",
-      "coverage_note": "KASP covers about 1,573 procedures; we did not verify that knee replacement is one of them.",
-      "source_id": "src-sha-kerala-kasp"
+      "coverage_note": "KASP covers about 1,573 procedures; we did not verify that knee replacement is one of them. Kerala's 2020 service contract names the national HBP 2.0 list as KASP's package list, but we couldn't check the current Kerala list.",
+      "source_id": "src-sha-kerala-contract"
     },
     {
       "scheme_id": "kl-kasp",
       "medical_need_id": "angioplasty",
       "coverage_level": "unverified",
-      "coverage_note": "KASP covers about 1,573 procedures; we did not verify that angioplasty is one of them.",
-      "source_id": "src-sha-kerala-kasp"
+      "coverage_note": "KASP covers about 1,573 procedures; we did not verify that angioplasty is one of them. Kerala's 2020 service contract names the national HBP 2.0 list as KASP's package list, but we couldn't check the current Kerala list.",
+      "source_id": "src-sha-kerala-contract"
     },
     {
       "scheme_id": "kl-kasp",
       "medical_need_id": "leukemia",
       "coverage_level": "unverified",
-      "coverage_note": "KASP covers about 1,573 procedures; we did not verify that leukaemia treatment is one of them.",
-      "source_id": "src-sha-kerala-kasp"
+      "coverage_note": "KASP covers about 1,573 procedures; we did not verify that leukaemia treatment is one of them. Kerala's 2020 service contract names the national HBP 2.0 list as KASP's package list, but we couldn't check the current Kerala list.",
+      "source_id": "src-sha-kerala-contract"
     },
     {
       "scheme_id": "kl-kbf",
@@ -1555,6 +1606,142 @@
       "verification_status": "government_listing",
       "last_verified_on": "2026-10-29",
       "source_id": "src-mohfw-ran"
+    },
+    {
+      "id": "aiims-nagpur",
+      "name": "All India Institute of Medical Sciences, Nagpur",
+      "address_line": "Plot No. 2, Sector 20, MIHAN",
+      "city": "Nagpur",
+      "district": "Nagpur",
+      "state": "MH",
+      "pin": null,
+      "latitude": null,
+      "longitude": null,
+      "coordinates_note": null,
+      "phone": "9404044944 (helpline)",
+      "website": "https://aiimsnagpur.edu.in/",
+      "verification_status": "hospital_official_source",
+      "last_verified_on": "2026-10-29",
+      "source_id": "src-aiimsngp-joint"
+    },
+    {
+      "id": "mh-gmc-miraj",
+      "name": "Government Medical College & Hospital, Miraj",
+      "address_line": null,
+      "city": "Miraj",
+      "district": "Sangli",
+      "state": "MH",
+      "pin": null,
+      "latitude": null,
+      "longitude": null,
+      "coordinates_note": null,
+      "phone": null,
+      "website": null,
+      "verification_status": "government_listing",
+      "last_verified_on": "2026-10-29",
+      "source_id": "src-mjpjay-hospitals"
+    },
+    {
+      "id": "mh-sassoon-pune",
+      "name": "Sassoon General Hospital",
+      "address_line": null,
+      "city": "Pune (Haveli)",
+      "district": "Pune",
+      "state": "MH",
+      "pin": null,
+      "latitude": null,
+      "longitude": null,
+      "coordinates_note": null,
+      "phone": null,
+      "website": null,
+      "verification_status": "government_listing",
+      "last_verified_on": "2026-10-29",
+      "source_id": "src-mjpjay-hospitals"
+    },
+    {
+      "id": "mh-kem-mumbai",
+      "name": "KEM Hospital, Parel",
+      "address_line": null,
+      "city": "Mumbai (Parel)",
+      "district": "Mumbai",
+      "state": "MH",
+      "pin": null,
+      "latitude": null,
+      "longitude": null,
+      "coordinates_note": null,
+      "phone": null,
+      "website": null,
+      "verification_status": "government_listing",
+      "last_verified_on": "2026-10-29",
+      "source_id": "src-mjpjay-hospitals"
+    },
+    {
+      "id": "mh-jj-mumbai",
+      "name": "Grant Medical College and Sir J.J. Group of Hospitals",
+      "address_line": null,
+      "city": "Mumbai",
+      "district": "Mumbai",
+      "state": "MH",
+      "pin": null,
+      "latitude": null,
+      "longitude": null,
+      "coordinates_note": null,
+      "phone": null,
+      "website": null,
+      "verification_status": "government_listing",
+      "last_verified_on": "2026-10-29",
+      "source_id": "src-mjpjay-hospitals"
+    },
+    {
+      "id": "mh-gmc-nagpur",
+      "name": "Government Medical College Hospital, Nagpur",
+      "address_line": null,
+      "city": "Nagpur",
+      "district": "Nagpur",
+      "state": "MH",
+      "pin": null,
+      "latitude": null,
+      "longitude": null,
+      "coordinates_note": null,
+      "phone": null,
+      "website": null,
+      "verification_status": "government_listing",
+      "last_verified_on": "2026-10-29",
+      "source_id": "src-mjpjay-hospitals"
+    },
+    {
+      "id": "mh-gmc-ssh-nagpur",
+      "name": "Government Medical College and Super Speciality Hospital, Nagpur",
+      "address_line": null,
+      "city": "Nagpur",
+      "district": "Nagpur",
+      "state": "MH",
+      "pin": null,
+      "latitude": null,
+      "longitude": null,
+      "coordinates_note": null,
+      "phone": null,
+      "website": null,
+      "verification_status": "government_listing",
+      "last_verified_on": "2026-10-29",
+      "source_id": "src-mjpjay-hospitals"
+    },
+    {
+      "id": "mh-cpr-kolhapur",
+      "name": "RCSM Government Medical College and CPR Hospital, Kolhapur",
+      "address_line": null,
+      "city": "Kolhapur (Karveer)",
+      "district": "Kolhapur",
+      "state": "MH",
+      "pin": null,
+      "latitude": null,
+      "longitude": null,
+      "coordinates_note": null,
+      "phone": null,
+      "website": null,
+      "verification_status": "government_listing",
+      "last_verified_on": "2026-10-29",
+      "source_id": "src-mjpjay-hospitals"
     }
   ],
   "scheme_hospitals": [
@@ -1629,6 +1816,96 @@
       "status": "listed_by_scheme_document",
       "source_id": "src-mohfw-ran",
       "note": "Named on a MoHFW page as holding a RAN revolving fund. That page appears older than the 2019 umbrella guidelines, so confirm the current process with the hospital."
+    },
+    {
+      "scheme_id": "pmjay-family",
+      "hospital_id": "aiims-nagpur",
+      "medical_need_id": "knee-replacement",
+      "department": "Orthopaedics",
+      "status": "listed_by_hospital",
+      "source_id": "src-aiimsngp-joint",
+      "note": "The hospital reports knee replacements under PM-JAY (Department of Orthopaedics)."
+    },
+    {
+      "scheme_id": "pmjay-senior-70",
+      "hospital_id": "aiims-nagpur",
+      "medical_need_id": "knee-replacement",
+      "department": "Orthopaedics",
+      "status": "listed_by_hospital",
+      "source_id": "src-aiimsngp-joint",
+      "note": "The hospital reports knee replacements under PM-JAY; it does not mention the 70+ card specifically."
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "hospital_id": "aiims-nagpur",
+      "medical_need_id": "knee-replacement",
+      "department": "Orthopaedics",
+      "status": "listed_by_hospital",
+      "source_id": "src-aiimsngp-joint",
+      "note": "The hospital reports knee replacements under MJPJAY (Department of Orthopaedics)."
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "hospital_id": "mh-gmc-miraj",
+      "medical_need_id": null,
+      "department": null,
+      "status": "listed_by_scheme_document",
+      "source_id": "src-mjpjay-hospitals",
+      "note": "Listed as a government multi-speciality hospital in an undated official MJPJAY empanelment list. The list doesn't show specialities, so treatment availability and current empanelment aren't confirmed — check with the hospital's Arogyamitra desk."
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "hospital_id": "mh-sassoon-pune",
+      "medical_need_id": null,
+      "department": null,
+      "status": "listed_by_scheme_document",
+      "source_id": "src-mjpjay-hospitals",
+      "note": "Listed as a government multi-speciality hospital in an undated official MJPJAY empanelment list. The list doesn't show specialities, so treatment availability and current empanelment aren't confirmed — check with the hospital's Arogyamitra desk."
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "hospital_id": "mh-kem-mumbai",
+      "medical_need_id": null,
+      "department": null,
+      "status": "listed_by_scheme_document",
+      "source_id": "src-mjpjay-hospitals",
+      "note": "Listed as a government multi-speciality hospital in an undated official MJPJAY empanelment list. The list doesn't show specialities, so treatment availability and current empanelment aren't confirmed — check with the hospital's Arogyamitra desk."
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "hospital_id": "mh-jj-mumbai",
+      "medical_need_id": null,
+      "department": null,
+      "status": "listed_by_scheme_document",
+      "source_id": "src-mjpjay-hospitals",
+      "note": "Listed as a government multi-speciality hospital in an undated official MJPJAY empanelment list. The list doesn't show specialities, so treatment availability and current empanelment aren't confirmed — check with the hospital's Arogyamitra desk."
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "hospital_id": "mh-gmc-nagpur",
+      "medical_need_id": null,
+      "department": null,
+      "status": "listed_by_scheme_document",
+      "source_id": "src-mjpjay-hospitals",
+      "note": "Listed as a government multi-speciality hospital in an undated official MJPJAY empanelment list. The list doesn't show specialities, so treatment availability and current empanelment aren't confirmed — check with the hospital's Arogyamitra desk."
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "hospital_id": "mh-gmc-ssh-nagpur",
+      "medical_need_id": null,
+      "department": null,
+      "status": "listed_by_scheme_document",
+      "source_id": "src-mjpjay-hospitals",
+      "note": "Listed as a government multi-speciality hospital in an undated official MJPJAY empanelment list. The list doesn't show specialities, so treatment availability and current empanelment aren't confirmed — check with the hospital's Arogyamitra desk."
+    },
+    {
+      "scheme_id": "mh-mjpjay-integrated",
+      "hospital_id": "mh-cpr-kolhapur",
+      "medical_need_id": null,
+      "department": null,
+      "status": "listed_by_scheme_document",
+      "source_id": "src-mjpjay-hospitals",
+      "note": "Listed as a government multi-speciality hospital in an undated official MJPJAY empanelment list. The list doesn't show specialities, so treatment availability and current empanelment aren't confirmed — check with the hospital's Arogyamitra desk."
     }
   ]
 }

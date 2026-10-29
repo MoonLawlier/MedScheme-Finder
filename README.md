@@ -134,7 +134,7 @@ All facts were checked on **29 Oct 2026**. Every row links to a source in `refer
 |---|---|---|---|
 | AB PM-JAY | National | ₹5 lakh/family/year, cashless, 3 days pre / 15 days post, SECC basis; PTCA package MC011 (HBP 2.1); 549 cancer procedures | [PIB 6-year doc](https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/sep/doc2024923400001.pdf), [NHA HBP 2.1](https://nha.gov.in/img/pmjay-files/HBP-2.1.pdf), [Lok Sabha AU2641](https://eparlib.nic.in/bitstream/123456789/2500970/1/AU2641.pdf) |
 | PM-JAY for 70+ | National | Age 70+ regardless of income; ₹5 lakh; exclusive top-up; private insurance/ESI eligible; CGHS/ECHS/CAPF may choose | [NHA press release](https://nha.gov.in/img/resources/Press_Release.pdf) |
-| Integrated MJPJAY + PM-JAY | Maharashtra | ₹5 lakh floater; categories A–E; 1,356 packages; documents; Arogyamitra | [Govt. medical college summary](https://iggmc.edu.in/wp-content/uploads/2026/04/Integrated-Ayushman-Bharat.pdf) (secondary — portal unreadable) |
+| Integrated MJPJAY + PM-JAY | Maharashtra | ₹5 lakh floater; categories A–E; 1,356 packages; documents; Arogyamitra; **angioplasty (M7F1.1, ₹60,000) and leukaemia packages confirmed** in the [1,356-package master](https://www.jeevandayee.gov.in/MJPJAY/RGJAYDocuments/1356%20-%20Package%20Master.pdf) | [Govt. medical college summary](https://iggmc.edu.in/wp-content/uploads/2026/04/Integrated-Ayushman-Bharat.pdf) (secondary; portal pages unreadable, PDFs readable) |
 | Umbrella RAN | National | Up to ₹15 lakh one-time, paid to govt hospital; process and documents | [PIB 22 Jul 2022](https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1843846&reg=48&lang=2), [AIIMS Bhubaneswar](https://aiimsbhubaneswar.nic.in/schemes/umbrella-scheme-rashtriya-arogya-nidhi-ran/) |
 | HMCPF | National | Up to ₹15 lakh for cancer patients below poverty line at RCCs/TCCCs/SCIs | [Lok Sabha AU5561 (Apr 2025)](https://eparlib.sansad.in/bitstream/123456789/3010946/1/AU5561_tNqey7.pdf) |
 | HMDG | National | Up to ₹1.25 lakh, family income ≤ ₹1.25 lakh | [PIB 22 Jul 2022](https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1843846&reg=48&lang=2) — record flagged `requires_verification` |
@@ -144,19 +144,21 @@ All facts were checked on **29 Oct 2026**. Every row links to a source in `refer
 
 Knee replacement under PM-JAY (family and 70+) is backed by [Lok Sabha Unstarred Q.720, 29 Nov 2024](https://eparlib.sansad.in/bitstream/123456789/2983600/1/AU720_T12thL.pdf), which names Total Knee Replacement among AB PM-JAY services for senior citizens. The HBP 2.0 package code SB039 comes from a [Punjab SHA list](https://sha.punjab.gov.in/Security_audit/shapunjab/downloadfiles/letters/Order_reagrding_25_packages_HBP20.pdf) (historical, 2020–21), shown only as context about states reserving packages for government hospitals.
 
-Hospitals (3), each traced to a source:
+Hospitals (11), each traced to a source:
 
-- **Tata Memorial Hospital, Parel, Mumbai** — its own [patient booklet](https://tmc.gov.in/event/upload/12112025_5/TMH_Brochure_%20patient%20booklet.pdf) lists MJPJAY, AB-PMJAY and PMNRF, and adult haematology (acute leukaemia, CML) clinics. Linked to leukaemia only.
-- **AIIMS Bhubaneswar** — its own [PM-JAY](https://aiimsbhubaneswar.nic.in/schemes/ayushman-bharat-pm-jay/) and RAN pages. Scheme-level only; treatment availability shown as not confirmed.
-- **AIIMS New Delhi** — named on the [MoHFW RAN page](https://mohfw.gov.in/major-programmes/poor-patients-financial-assistance/rashtriya-arogya-nidhi) as holding a RAN revolving fund (page appears to predate 2019; flagged).
+- **Tata Memorial Hospital, Parel, Mumbai**: its own [patient booklet](https://tmc.gov.in/event/upload/12112025_5/TMH_Brochure_%20patient%20booklet.pdf) lists MJPJAY, AB-PMJAY and PMNRF, and adult haematology (acute leukaemia, CML) clinics. Linked to leukaemia only.
+- **AIIMS Nagpur**: its own [news page](https://aiimsnagpur.edu.in/news/news/550-joint-replacement-surgeries-done-under-department-of-orthopedics%2C-aiims-nagpur) reports total knee replacements under MJPJAY and PM-JAY. Linked to knee replacement.
+- **AIIMS Bhubaneswar**: its own [PM-JAY](https://aiimsbhubaneswar.nic.in/schemes/ayushman-bharat-pm-jay/) and RAN pages. Scheme-level only.
+- **AIIMS New Delhi**: named on the [MoHFW RAN page](https://mohfw.gov.in/major-programmes/poor-patients-financial-assistance/rashtriya-arogya-nidhi) (page appears to predate 2019; flagged).
+- **Seven Maharashtra government hospitals**: GMC Miraj (Sangli), Sassoon (Pune), KEM and JJ (Mumbai), GMC and GMC Super Speciality (Nagpur), CPR (Kolhapur). Taken from the official but **undated** [MJPJAY empanelment list](https://www.jeevandayee.gov.in/RGJAYDocuments/Empanelled_Hospitals_Under_MJPJAY.pdf), which has no specialities. Shown as "named in a government scheme document", with treatment availability not confirmed. No addresses or coordinates are added beyond what the list gives.
 
 Hospital coordinates are approximate public-map values and are labelled as such wherever a distance is shown.
 
 ### Known gaps (shown honestly in the UI)
 
-- Procedure-level coverage under the Maharashtra and Kerala (KASP) schemes isn't verified.
+- Knee replacement under MJPJAY is only hospital-reported: our reading of the package master is capped at row 546, before Orthopaedics. KASP procedure coverage isn't verified (Kerala's 2020 contract says it uses HBP 2.0, but the current list wasn't available).
 - `pmjay.gov.in`, `beneficiary.nha.gov.in`, `hospitals.pmjay.gov.in`, `jeevandayee.gov.in` and the 2019 RAN guidelines blocked automated fetching; links point to these official domains with a note to confirm details there.
-- State schemes cover Maharashtra and Kerala only. Tamil Nadu's CMCHIS was investigated but left out: its official portal didn't load, and the reported Aug 2026 rise from ₹5 lakh to ₹25 lakh had no government order behind it. Other states show a clear empty state.
+- State schemes cover Maharashtra and Kerala only. Tamil Nadu's CMCHIS was investigated but left out: its official portal didn't load, and the reported Aug 2026 rise from ₹5 lakh to ₹25 lakh had no government order behind it. Punjab was left out because its official FAQ describes the ₹5 lakh MMSBY, while news reports a ₹10 lakh Mukh Mantri Sehat Yojana from 2026 with no official page we could read. Karnataka's SAST pages block automated reading, and no official Rajasthan MAA page was found. Other states show a clear empty state.
 - HMCPF / HMDG / PMNRF application processes and document lists weren't available; only provisional, clearly labelled checklists are shown.
 
 ## Adding a need or scheme

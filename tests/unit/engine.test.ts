@@ -143,6 +143,16 @@ describe("matching against the seeded dataset", () => {
     expect(find(below, "kl-kbf")?.overall).toBe("potential_match");
   });
 
+  it("confirms angioplasty under Maharashtra's scheme from the package master, but not knee replacement", () => {
+    const mh = { residenceState: "MH", stateBeneficiaryDocument: "yes" } as const;
+    const angio = runMatching(data, criteria({ needId: "angioplasty", ...mh }));
+    expect(find(angio, "mh-mjpjay-integrated")?.overall).toBe("potential_match");
+    const knee = runMatching(data, criteria({ needId: "knee-replacement", ...mh }));
+    const kneeMh = find(knee, "mh-mjpjay-integrated");
+    expect(kneeMh?.overall).toBe("needs_verification");
+    expect(kneeMh?.evaluations.find((e) => e.criterion === "treatment")?.display).toBe("requires_verification");
+  });
+
   it("excludes the Maharashtra scheme for residents of other states", () => {
     const results = runMatching(data, criteria({ needId: "leukemia", residenceState: "KA" }));
     expect(find(results, "mh-mjpjay-integrated")?.overall).toBe("does_not_match");
@@ -220,6 +230,18 @@ describe("hospital ranking", () => {
       state: "OD", district: null, cityOrPin: null, latitude: null, longitude: null, source: "manual",
     });
     expect(ranked[0].hospital.id).toBe("aiims-bbsr");
+    expect(ranked.every((h) => h.distanceKm === null)).toBe(true);
+  });
+
+  it("puts the chosen district's hospitals first, with treatment-confirmed links ahead of scheme-level ones", () => {
+    const links = data.schemeHospitals.filter((l) => l.schemeId === "mh-mjpjay-integrated");
+    const ranked = rankHospitals(links, data.hospitals, "knee-replacement", {
+      state: "MH", district: "Nagpur", cityOrPin: null, latitude: null, longitude: null, source: "manual",
+    });
+    expect(ranked[0].hospital.id).toBe("aiims-nagpur");
+    expect(ranked[0].treatmentConfirmed).toBe(true);
+    const listOnly = ranked.find((h) => h.hospital.id === "mh-gmc-miraj");
+    expect(listOnly?.treatmentConfirmed).toBe(false);
     expect(ranked.every((h) => h.distanceKm === null)).toBe(true);
   });
 
