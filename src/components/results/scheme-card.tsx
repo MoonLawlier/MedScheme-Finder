@@ -36,7 +36,7 @@ function Section({ title, icon, children, defaultOpen = true }: { title: string;
   );
 }
 
-export function SchemeCard({ result, searchId, needName }: { result: SchemeResult; searchId: string | null; needName: string }) {
+export function SchemeCard({ result, searchId }: { result: SchemeResult; searchId: string | null }) {
   const { scheme } = result;
   const [open, setOpen] = useState(false);
   const recorded = useRef(false);
@@ -107,7 +107,7 @@ export function SchemeCard({ result, searchId, needName }: { result: SchemeResul
               <dd>{scheme.scope === "national" ? "All of India" : scheme.applicableStates.map(stateName).join(", ")}</dd>
               <dt className="font-medium text-muted">Intended for</dt>
               <dd>{scheme.intendedBeneficiaries}</dd>
-              <dt className="font-medium text-muted">{needName}</dt>
+              <dt className="font-medium text-muted">Condition or treatment</dt>
               <dd className="space-y-1">
                 <p>{result.treatment.coverageNote}</p>
                 <SourceTag sourceId={result.treatment.sourceId} sources={sources} />
@@ -279,7 +279,7 @@ export function SchemeCard({ result, searchId, needName }: { result: SchemeResul
           </Section>
 
           <Section title="Participating hospitals" icon={<Building2 className="size-4 text-teal" aria-hidden />}>
-            <HospitalList hospitals={result.hospitals} sources={sources} needName={needName} />
+            <HospitalList hospitals={result.hospitals} sources={sources} />
             {directoryUrl && (
               <p>
                 <ExternalLink href={directoryUrl} className="font-medium text-teal hover:underline">
@@ -322,13 +322,12 @@ const statusText = {
   unverified: "Not verified",
 } as const;
 
-function HospitalList({ hospitals, sources, needName }: { hospitals: RankedHospital[]; sources: Map<string, Source>; needName: string }) {
+function HospitalList({ hospitals, sources }: { hospitals: RankedHospital[]; sources: Map<string, Source> }) {
   const [showAll, setShowAll] = useState(false);
   if (hospitals.length === 0) {
     return (
       <p className="rounded-xl border border-dashed border-line-strong p-4 text-ink-soft">
-        No verified participating hospitals for this scheme and {needName.toLowerCase()} are in our dataset yet. We don&apos;t list
-        hospitals we can&apos;t trace to a source.
+        No verified participating hospitals for this search are in our dataset yet. We don&apos;t list hospitals we can&apos;t trace to a source.
       </p>
     );
   }
@@ -361,9 +360,9 @@ function HospitalList({ hospitals, sources, needName }: { hospitals: RankedHospi
               <div className="flex flex-wrap gap-2">
                 <Tag className="border-ok/30 bg-ok-wash text-ok">{statusText[link.status]}</Tag>
                 {treatmentConfirmed ? (
-                  <Tag>{needName} services listed</Tag>
+                  <Tag>Relevant services listed</Tag>
                 ) : (
-                  <Tag className="border-warn/30 bg-warn-wash text-warn">{needName} availability not confirmed</Tag>
+                  <Tag className="border-warn/30 bg-warn-wash text-warn">Availability not confirmed</Tag>
                 )}
               </div>
               {link.department && (

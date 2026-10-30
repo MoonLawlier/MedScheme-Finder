@@ -15,7 +15,9 @@ export interface DevSignInState {
 
 /** DEVELOPMENT ONLY — refuses to run when Supabase is configured or in production. */
 export async function devSignIn(_prev: DevSignInState, formData: FormData): Promise<DevSignInState> {
-  if (backendMode !== "dev") return { error: "Development sign-in is disabled on this deployment." };
+  if (backendMode !== "dev" || process.env.ALLOW_DEV_FALLBACK !== "true") {
+    return { error: "Local demo sign-in is disabled. Configure Supabase for real sign-in." };
+  }
   const parsed = z.string().trim().email().max(200).safeParse(formData.get("email"));
   if (!parsed.success) return { error: "Enter a valid email address." };
   const { value, maxAge } = signDevSession(parsed.data);

@@ -14,20 +14,22 @@ Next.js 16 (App Router, Turbopack) · TypeScript (strict) · Tailwind CSS 4 · S
 
 UI primitives are hand-written in `src/components/ui` (shadcn-style, no Radix) because the shadcn registry wasn't reachable from the build environment.
 
-## Quick start (no credentials needed)
+## Quick start
 
 ```bash
 npm install
 npm run dev            # http://localhost:3000
 ```
 
-With no Supabase variables set, the app runs in a clearly labelled **development mode**:
+Without Supabase credentials, browsing the app and its reference data works, but real sign-in is unavailable. To enable
+the local, unverified sign-in used only for offline demos and tests, set `ALLOW_DEV_FALLBACK=true` before starting:
 
-- Sign-in accepts any email **without verifying it** (banner on every page).
+- Sign-in accepts any email **without verifying it**.
 - Profiles, search history and statuses are written to `.data/dev-store.json`.
 - Scheme data is read from the same seed file that populates Postgres.
 
-Dev mode is disabled in production builds unless `ALLOW_DEV_FALLBACK=true`.
+Do not use this fallback for real accounts or personal/medical information. For actual email, Google or SMS
+authentication, configure Supabase as described below.
 
 ## Running with Supabase
 

@@ -9,7 +9,6 @@ import { buttonClass } from "@/components/ui/button";
 
 const links = [
   { href: "/dashboard", label: "Find schemes" },
-  { href: "/profile", label: "My profile" },
   { href: "/history", label: "Scheme history" },
   { href: "/help", label: "Help" },
 ];
@@ -33,6 +32,9 @@ export async function SiteHeader() {
               <div className="hidden sm:block">
                 <ModeToggle />
               </div>
+              <Link href="/profile" className={buttonClass("secondary", "sm")}>
+                My profile
+              </Link>
               <SignOutButton className="hidden lg:inline-flex" />
               <MobileMenu>
                 <div className="mb-3 sm:hidden">

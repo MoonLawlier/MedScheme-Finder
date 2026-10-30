@@ -6,7 +6,6 @@ import { useEffect, useMemo, useState, useSyncExternalStore, useTransition, type
 import { saveSearchAnswersToProfile } from "@/app/actions/profile";
 import { runSearch } from "@/app/actions/search";
 import { useMode } from "@/components/layout/mode-provider";
-import { NeedPicker } from "@/components/search/need-picker";
 import { Button, buttonClass } from "@/components/ui/button";
 import { ChoicePills, Field, Input, Select } from "@/components/ui/form";
 import { Notice, Panel } from "@/components/ui/feedback";
@@ -89,7 +88,6 @@ function draftFromProfile(p: ProfilePrefill | null): Draft {
 
 interface Props {
   need: MedicalNeed;
-  needs: MedicalNeed[];
   fields: NeedField[];
   config: FormConfig;
   prefill: ProfilePrefill | null;
@@ -114,7 +112,7 @@ export function SearchForm(props: Props) {
   return <SearchFormInner key={`${mode}:${props.need.id}`} mode={mode} {...props} />;
 }
 
-function SearchFormInner({ need, needs, fields, config, prefill, mode }: Props & { mode: SearchMode }) {
+function SearchFormInner({ need, fields, config, prefill, mode }: Props & { mode: SearchMode }) {
   const router = useRouter();
   const isOpen = mode === "open";
   const baseline = useMemo(() => (isOpen ? draftFromProfile(null) : draftFromProfile(prefill)), [isOpen, prefill]);
@@ -314,17 +312,12 @@ function SearchFormInner({ need, needs, fields, config, prefill, mode }: Props &
       <div className="grid gap-8 lg:grid-cols-[1fr_20rem]">
         <form onSubmit={submit} noValidate className="space-y-6">
           <header className="space-y-2">
-            <h1 className="text-3xl font-semibold">{need.name}: search details</h1>
+            <h1 className="text-3xl font-semibold">Search details</h1>
             <p className="max-w-prose text-ink-soft">
               Answer what you know. Every question allows “Not sure”, and missing answers are shown as missing — never
               assumed.
             </p>
           </header>
-
-          <div className="space-y-2">
-            <p className="text-sm font-semibold">Medical need</p>
-            <NeedPicker needs={needs} compact activeId={need.id} />
-          </div>
 
           {!isOpen && !prefill && (
             <Notice tone="warn" title="Your profile isn't set up yet">

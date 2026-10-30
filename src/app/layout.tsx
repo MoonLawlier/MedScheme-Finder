@@ -19,17 +19,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#12304a", width: "device-width", initialScale: 1 };
 
 function EnvironmentBanner() {
-  if (backendMode === "supabase") return null;
-  if (backendMode === "dev")
-    return (
-      <div className="bg-warn-wash px-4 py-2 text-center text-[0.8125rem] text-ink" role="note">
-        <strong>Development mode.</strong> Supabase isn&apos;t configured, so sign-in is not verified and data is
-        stored in a local file. Don&apos;t enter real personal or medical details.{" "}
-        <Link href="/help#setup" className="font-medium text-teal underline">
-          Setup guide
-        </Link>
-      </div>
-    );
+  if (backendMode === "supabase" || backendMode === "dev") return null;
   return (
     <div className="bg-bad-wash px-4 py-2 text-center text-[0.8125rem] text-ink" role="alert">
       <strong>This deployment isn&apos;t configured.</strong> The database and sign-in are unavailable until Supabase

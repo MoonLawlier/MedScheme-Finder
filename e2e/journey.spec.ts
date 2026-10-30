@@ -5,9 +5,13 @@ test("A: a new user registers, completes the profile and reaches the dashboard",
   await newUser(page, "a");
   await expect(page.getByRole("heading", { name: "Welcome, Asha" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "What medical assistance are you looking for?" })).toBeVisible();
-  for (const need of ["Knee replacement", "Leukaemia", "Angioplasty"]) {
-    await expect(page.getByRole("link", { name: new RegExp(need) }).first()).toBeVisible();
-  }
+  await expect(page.getByLabel(/^Condition or treatment/)).toBeVisible();
+  await expect(page.getByRole("link", { name: /Knee replacement|Leukaemia|Angioplasty/ })).toHaveCount(0);
+
+  await page.getByLabel(/^Condition or treatment/).fill("unknown condition");
+  await page.getByRole("button", { name: "Continue" }).click();
+  await expect(page.getByRole("alert")).toContainText("We don't have verified scheme data");
+  await expect(page).toHaveURL(/\/dashboard$/);
 });
 
 test("protected pages redirect to sign-in when signed out", async ({ page }) => {
@@ -18,7 +22,8 @@ test("protected pages redirect to sign-in when signed out", async ({ page }) => 
 test("B: profile mode prefills, and temporary changes don't overwrite the profile", async ({ page }) => {
   await newUser(page, "b", { dob: "1980-05-10" });
   await setMode(page, "profile");
-  await page.getByRole("link", { name: /Leukaemia/ }).first().click();
+  await page.getByLabel(/^Condition or treatment/).fill("Leukaemia");
+  await page.getByRole("button", { name: "Continue" }).click();
   const age = page.getByLabel(/^Your age/);
   await expect(age).not.toHaveValue("");
   await expect(page.getByText("From your profile").first()).toBeVisible();
@@ -39,7 +44,8 @@ test("B: profile mode prefills, and temporary changes don't overwrite the profil
 test("C: open mode searches for someone else without touching the profile", async ({ page }) => {
   await newUser(page, "c", { name: "Ravi Owner" });
   await setMode(page, "open");
-  await page.getByRole("link", { name: /Knee replacement/ }).first().click();
+  await page.getByLabel(/^Condition or treatment/).fill("Knee replacement");
+  await page.getByRole("button", { name: "Continue" }).click();
   await expect(page.getByText("Open mode: searching for someone else")).toBeVisible();
   const age = page.getByLabel(/^Age of the person needing treatment/);
   await expect(age).toHaveValue("");
@@ -67,7 +73,10 @@ test("D, F, G: angioplasty results explain eligibility, money and official links
   await newUser(page, "d");
   await setMode(page, "open");
   await page.goto("/search/angioplasty");
-  await expect(page.getByRole("heading", { name: "Angioplasty: search details" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Search details" })).toBeVisible();
+  await expect(page.getByText("Knee replacement", { exact: true })).toHaveCount(0);
+  await expect(page.getByText("Leukaemia", { exact: true })).toHaveCount(0);
+  await expect(page.getByText("Angioplasty", { exact: true })).toHaveCount(0);
   await page.getByLabel(/^Age of the person/).fill("72");
   await page.locator("#treatmentState").selectOption("DL");
   await page.getByRole("button", { name: "Find schemes" }).click();
@@ -172,7 +181,7 @@ test("I and J: history starts empty and stays private to each user", async ({ pa
   await expect(page).toHaveURL(/\/results$/);
   await page.getByRole("button", { name: "Show details" }).first().click();
   await page.goto("/history");
-  await expect(page.getByRole("cell", { name: "Angioplasty" })).toBeVisible();
+  await expect(page.getByRole("cell", { name: "Medical assistance search" })).toBeVisible();
   await page.getByLabel(/Your application status for/).first().selectOption("planning");
   await expect(page.getByRole("status").filter({ hasText: "Saved" })).toBeVisible();
 

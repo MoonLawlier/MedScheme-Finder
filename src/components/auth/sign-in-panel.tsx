@@ -11,6 +11,7 @@ import type { BackendMode } from "@/lib/config";
 
 interface Props {
   backend: BackendMode;
+  allowDemoSignIn: boolean;
   providers: { google: boolean; phone: boolean };
   next: string;
   errorCode: string | null;
@@ -26,18 +27,21 @@ function friendly(message: string): string {
   const m = message.toLowerCase();
   if (m.includes("rate limit") || m.includes("security purposes")) return "Too many attempts. Wait a minute, then try again.";
   if (m.includes("expired") || m.includes("invalid")) return "That code is incorrect or has expired. Check it or request a new one.";
+  if (m.includes("redirect") || m.includes("not allowed"))
+    return "Supabase rejected the return URL. In Authentication → URL Configuration, add http://localhost:3000/auth/callback to Redirect URLs.";
   if (m.includes("sms") || m.includes("phone provider")) return "Phone sign-in isn't set up on this project yet. Use email instead.";
   if (m.includes("provider is not enabled")) return "This sign-in method isn't enabled on this project yet. Use email instead.";
   if (m.includes("fetch")) return "Couldn't reach the sign-in service. Check your connection and try again.";
   return "Sign-in failed. Try again, or use a different method.";
 }
 
-export function SignInPanel({ backend, providers, next, errorCode }: Props) {
-  if (backend === "dev") return <DevSignIn next={next} />;
-  if (backend === "unconfigured")
+export function SignInPanel({ backend, allowDemoSignIn, providers, next, errorCode }: Props) {
+  if (backend === "dev" && allowDemoSignIn) return <DevSignIn next={next} />;
+  if (backend !== "supabase")
     return (
       <Notice tone="error" title="Sign-in is unavailable">
-        Supabase environment variables are not set for this deployment. See the README for setup.
+        Real sign-in needs a Supabase project. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+        to .env.local, then restart the app. See the <a href="/help#setup">setup guide</a>.
       </Notice>
     );
   return <SupabaseSignIn providers={providers} next={next} errorCode={errorCode} />;
@@ -64,7 +68,7 @@ function DevSignIn({ next }: { next: string }) {
   );
 }
 
-function SupabaseSignIn({ providers, next, errorCode }: Omit<Props, "backend">) {
+function SupabaseSignIn({ providers, next, errorCode }: Omit<Props, "backend" | "allowDemoSignIn">) {
   const router = useRouter();
   const [method, setMethod] = useState<"email" | "phone">("email");
   const [step, setStep] = useState<"enter" | "code">("enter");
@@ -126,6 +130,53 @@ function SupabaseSignIn({ providers, next, errorCode }: Omit<Props, "backend">) 
   return (
     <div className="space-y-5">
       {error && <Notice tone="error" role="alert" title={error} />}
+
+      <div className="space-y-3">
+        <Button
+          type="button"
+          className="w-full"
+          onClick={() => {
+            setMethod("email");
+            setStep("enter");
+            setIdentifier("");
+            setCode("");
+            setInfo(null);
+          }}
+        >
+          <Mail className="size-4" aria-hidden />
+          Continue with email
+        </Button>
+        <Button
+          type="button"
+          variant="secondary"
+          className="w-full"
+          onClick={google}
+        >
+          <svg viewBox="0 0 24 24" className="size-4" aria-hidden>
+            <path fill="#4285F4" d="M22.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h6c-.3 1.4-1 2.5-2.2 3.3v2.7h3.5c2.1-1.9 3.3-4.7 3.3-7.8z" />
+            <path fill="#34A853" d="M12 23c3 0 5.5-1 7.3-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2.1v2.8C3.9 20.5 7.7 23 12 23z" />
+            <path fill="#FBBC05" d="M5.7 14.1c-.2-.7-.4-1.4-.4-2.1s.1-1.4.4-2.1V7.1H2.1C1.4 8.6 1 10.2 1 12s.4 3.4 1.1 4.9l3.6-2.8z" />
+            <path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2C17.5 2.1 15 1 12 1 7.7 1 3.9 3.5 2.1 7.1l3.6 2.8C6.6 7.4 9.1 5.4 12 5.4z" />
+          </svg>
+          Continue with Google
+        </Button>
+        <Button
+          type="button"
+          variant="secondary"
+          className="w-full"
+          onClick={() => {
+            if (!providers.phone) return setPhoneNote(true);
+            setMethod("phone");
+            setStep("enter");
+            setIdentifier("");
+            setCode("");
+            setInfo(null);
+          }}
+        >
+          <Phone className="size-4" aria-hidden />
+          Continue with SMS
+        </Button>
+      </div>
 
       <div role="tablist" aria-label="Sign-in method" className="grid grid-cols-2 rounded-lg border border-line-strong p-1">
         {(["email", "phone"] as const).map((m) => (
@@ -201,18 +252,6 @@ function SupabaseSignIn({ providers, next, errorCode }: Omit<Props, "backend">) 
         </form>
       )}
 
-      <div className="flex items-center gap-3 text-xs text-muted">
-        <span className="h-px flex-1 bg-line" /> or <span className="h-px flex-1 bg-line" />
-      </div>
-      <Button variant="secondary" className="w-full" onClick={google}>
-        <svg viewBox="0 0 24 24" className="size-4" aria-hidden>
-          <path fill="#4285F4" d="M22.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h6c-.3 1.4-1 2.5-2.2 3.3v2.7h3.5c2.1-1.9 3.3-4.7 3.3-7.8z" />
-          <path fill="#34A853" d="M12 23c3 0 5.5-1 7.3-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2.1v2.8C3.9 20.5 7.7 23 12 23z" />
-          <path fill="#FBBC05" d="M5.7 14.1c-.2-.7-.4-1.4-.4-2.1s.1-1.4.4-2.1V7.1H2.1C1.4 8.6 1 10.2 1 12s.4 3.4 1.1 4.9l3.6-2.8z" />
-          <path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2C17.5 2.1 15 1 12 1 7.7 1 3.9 3.5 2.1 7.1l3.6 2.8C6.6 7.4 9.1 5.4 12 5.4z" />
-        </svg>
-        Continue with Google
-      </Button>
       {googleNote && (
         <Notice tone="info" title="Google sign-in isn't enabled yet">
           It needs a Google OAuth client configured in Supabase (see README → Google OAuth). Use email for now.
