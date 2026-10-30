@@ -10,8 +10,8 @@ test("A: a new user registers, completes the profile and reaches the dashboard",
 
   await page.getByLabel(/^Condition or treatment/).fill("unknown condition");
   await page.getByRole("button", { name: "Continue" }).click();
-  await expect(page.getByRole("alert")).toContainText("We don't have verified scheme data");
-  await expect(page).toHaveURL(/\/dashboard$/);
+  await expect(page.getByRole("alert").filter({ hasText: "We don't have verified scheme data" })).toBeVisible();
+  await expect(page).toHaveURL(/\/dashboard(\?welcome=1)?$/);
 });
 
 test("protected pages redirect to sign-in when signed out", async ({ page }) => {

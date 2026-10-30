@@ -23,15 +23,26 @@ const ERROR_TEXT: Record<string, string> = {
   not_configured: "Sign-in isn't configured on this deployment.",
 };
 
-function friendly(message: string): string {
-  const m = message.toLowerCase();
-  if (m.includes("rate limit") || m.includes("security purposes")) return "Too many attempts. Wait a minute, then try again.";
-  if (m.includes("expired") || m.includes("invalid")) return "That code is incorrect or has expired. Check it or request a new one.";
+/** Maps a Supabase auth error to a message the user can act on. Prefers the stable error code over message text. */
+function friendly(err: { message: string; code?: string }): string {
+  const code = err.code ?? "";
+  const m = err.message.toLowerCase();
+  if (code.includes("rate_limit") || m.includes("rate limit") || m.includes("security purposes"))
+    return "Too many attempts. Wait a minute, then try again.";
+  if (code === "otp_expired" || m.includes("expired")) return "That code is incorrect or has expired. Check it or request a new one.";
+  if (code === "email_address_invalid" || (m.includes("email address") && m.includes("invalid")))
+    return "That email address doesn't look valid. Check it and try again.";
+  if (code === "validation_failed" && m.includes("phone")) return "That phone number doesn't look valid. Include the country code, e.g. +91…";
+  if (code === "signup_disabled" || m.includes("signups not allowed"))
+    return "New accounts can't be created right now. Contact the site owner.";
+  if (code === "phone_provider_disabled" || code === "sms_send_failed" || m.includes("sms") || m.includes("phone provider"))
+    return "Phone sign-in isn't set up on this project yet. Use email instead.";
+  if (code === "provider_disabled" || m.includes("provider is not enabled"))
+    return "This sign-in method isn't enabled on this project yet. Use email instead.";
   if (m.includes("redirect") || m.includes("not allowed"))
-    return "Supabase rejected the return URL. In Authentication → URL Configuration, add http://localhost:3000/auth/callback to Redirect URLs.";
-  if (m.includes("sms") || m.includes("phone provider")) return "Phone sign-in isn't set up on this project yet. Use email instead.";
-  if (m.includes("provider is not enabled")) return "This sign-in method isn't enabled on this project yet. Use email instead.";
-  if (m.includes("fetch")) return "Couldn't reach the sign-in service. Check your connection and try again.";
+    return "Supabase rejected the return URL. In Authentication → URL Configuration, add this site's /auth/callback URL to Redirect URLs.";
+  if (m.includes("invalid") || m.includes("token")) return "That code is incorrect or has expired. Check it or request a new one.";
+  if (m.includes("fetch") || m.includes("network")) return "Couldn't reach the sign-in service. Check your connection and try again.";
   return "Sign-in failed. Try again, or use a different method.";
 }
 
@@ -92,7 +103,7 @@ function SupabaseSignIn({ providers, next, errorCode }: Omit<Props, "backend" | 
         ? await supabase.auth.signInWithOtp({ email: identifier.trim(), options: { emailRedirectTo: redirectTo(), shouldCreateUser: true } })
         : await supabase.auth.signInWithOtp({ phone: identifier.replace(/\s/g, "") });
     setPending(false);
-    if (err) return setError(friendly(err.message));
+    if (err) return setError(friendly(err));
     setStep("code");
     setInfo(
       method === "email"
@@ -112,7 +123,7 @@ function SupabaseSignIn({ providers, next, errorCode }: Omit<Props, "backend" | 
         ? await supabase.auth.verifyOtp({ email: identifier.trim(), token, type: "email" })
         : await supabase.auth.verifyOtp({ phone: identifier.replace(/\s/g, ""), token, type: "sms" });
     setPending(false);
-    if (err) return setError(friendly(err.message));
+    if (err) return setError(friendly(err));
     router.replace(next);
     router.refresh();
   }
@@ -124,7 +135,7 @@ function SupabaseSignIn({ providers, next, errorCode }: Omit<Props, "backend" | 
       provider: "google",
       options: { redirectTo: redirectTo() },
     });
-    if (err) setError(friendly(err.message));
+    if (err) setError(friendly(err));
   }
 
   return (

@@ -1,7 +1,10 @@
 import { type EmailOtpType } from "@supabase/supabase-js";
 import { NextResponse, type NextRequest } from "next/server";
+import { safeNext } from "@/lib/auth/safe-next";
 import { backendMode } from "@/lib/config";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+
+const SIGN_IN_OTP_TYPES: EmailOtpType[] = ["email", "magiclink", "signup", "invite"];
 
 /**
  * Completes Supabase sign-in for magic links (token_hash) and OAuth / PKCE
@@ -9,8 +12,7 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
  */
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = request.nextUrl;
-  const nextParam = searchParams.get("next");
-  const next = nextParam && nextParam.startsWith("/") && !nextParam.startsWith("//") ? nextParam : "/dashboard";
+  const next = safeNext(searchParams.get("next"));
   const fail = (reason: string) => NextResponse.redirect(`${origin}/sign-in?error=${encodeURIComponent(reason)}`);
 
   if (backendMode !== "supabase") return fail("not_configured");
@@ -18,7 +20,9 @@ export async function GET(request: NextRequest) {
   const supabase = await createSupabaseServerClient();
   const code = searchParams.get("code");
   const tokenHash = searchParams.get("token_hash");
-  const type = searchParams.get("type") as EmailOtpType | null;
+  // Only the types a sign-in link can legitimately carry; anything else is rejected.
+  const rawType = searchParams.get("type");
+  const type = rawType && SIGN_IN_OTP_TYPES.includes(rawType as EmailOtpType) ? (rawType as EmailOtpType) : null;
 
   if (code) {
     const { error } = await supabase.auth.exchangeCodeForSession(code);
