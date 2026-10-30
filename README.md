@@ -154,21 +154,7 @@ Hospitals (11), each traced to a source:
 
 Hospital coordinates are approximate public-map values and are labelled as such wherever a distance is shown.
 
-### Known gaps (shown honestly in the UI)
 
-- Knee replacement under MJPJAY is only hospital-reported: our reading of the package master is capped at row 546, before Orthopaedics. KASP procedure coverage isn't verified (Kerala's 2020 contract says it uses HBP 2.0, but the current list wasn't available).
-- `pmjay.gov.in`, `beneficiary.nha.gov.in`, `hospitals.pmjay.gov.in`, `jeevandayee.gov.in` and the 2019 RAN guidelines blocked automated fetching; links point to these official domains with a note to confirm details there.
-- State schemes cover Maharashtra and Kerala only. Tamil Nadu's CMCHIS was investigated but left out: its official portal didn't load, and the reported Aug 2026 rise from ₹5 lakh to ₹25 lakh had no government order behind it. Punjab was left out because its official FAQ describes the ₹5 lakh MMSBY, while news reports a ₹10 lakh Mukh Mantri Sehat Yojana from 2026 with no official page we could read. Karnataka's SAST pages block automated reading, and no official Rajasthan MAA page was found. Other states show a clear empty state.
-- HMCPF / HMDG / PMNRF application processes and document lists weren't available; only provisional, clearly labelled checklists are shown.
-
-## Adding a need or scheme
-
-1. Add the need to `medical_needs` in `supabase/seed/reference-data.json` and (optionally) its questions to `src/lib/needs/registry.ts`.
-2. Add `sources`, the `scheme`, its `scheme_treatments` (with a coverage level), `scheme_eligibility_rules` (structured `definition`), `scheme_documents` and `scheme_hospitals`.
-3. `npm run seed:sql && npm test` — the integrity checks reject unsourced claims.
-4. `npm run seed` (hosted) or `supabase db reset` (local).
-
-Form questions such as the state ration-card question, PM-JAY status, social category and exact income appear automatically when a scheme for that need has a rule that uses them.
 
 ## Deployment
 
