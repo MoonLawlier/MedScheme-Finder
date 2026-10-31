@@ -25,7 +25,42 @@ export default async function LandingPage() {
                 How results are worked out
               </Link>
             </div>
+<<<<<<< HEAD
           </div>
+=======
+            <p className="text-sm text-muted">Search by condition or treatment to explore potential medical assistance.</p>
+          </div>
+
+          {sample && (
+            <figure className="rounded-2xl border border-line bg-paper p-5 sm:p-6">
+              <figcaption className="mb-4 space-y-2">
+                <p className="text-sm text-muted">Example output from the matching engine.</p>
+                <p className="font-display text-xl font-semibold">{sample.scheme.officialName}</p>
+                <OverallStamp status={sample.overall} />
+              </figcaption>
+              <div className="mb-4">
+                <Link href={user ? "/dashboard" : "/sign-in"} className={buttonClass("primary", "sm", "w-full")}>
+                  {user ? "Find medical assistance" : "Get started"}
+                </Link>
+              </div>
+              <ul className="divide-y divide-line rounded-xl border border-line bg-surface">
+                {sample.evaluations
+                  .filter((e) => e.mandatory && e.criterion !== "treatment")
+                  .slice(0, 4)
+                  .map((e) => (
+                    <li key={e.ruleId} className="flex flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+                      <span className="text-sm">
+                        <span className="block font-semibold">{criterionLabel[e.criterion]}</span>
+                        <span className="text-ink-soft">{e.officialText}</span>
+                      </span>
+                      <RuleStamp status={e.display} />
+                    </li>
+                  ))}
+              </ul>
+              <p className="mt-3 text-xs text-muted">{sample.summaryReason}</p>
+            </figure>
+          )}
+>>>>>>> origin/main
         </div>
       </section>
 

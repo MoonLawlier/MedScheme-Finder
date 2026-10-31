@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { ShieldCheck } from "lucide-react";
 import { authProviders, backendMode } from "@/lib/config";
+import { safeNext } from "@/lib/auth/safe-next";
 import { getCurrentUser } from "@/lib/auth/session";
 import { SignInPanel } from "@/components/auth/sign-in-panel";
 
@@ -9,8 +10,7 @@ export const metadata: Metadata = { title: "Sign in" };
 
 export default async function SignInPage({ searchParams }: PageProps<"/sign-in">) {
   const sp = await searchParams;
-  const rawNext = typeof sp.next === "string" ? sp.next : "/dashboard";
-  const next = rawNext.startsWith("/") && !rawNext.startsWith("//") ? rawNext : "/dashboard";
+  const next = safeNext(sp.next);
   if (await getCurrentUser()) redirect(next);
 
   return (
@@ -39,6 +39,7 @@ export default async function SignInPage({ searchParams }: PageProps<"/sign-in">
       <div className="rounded-2xl border border-line bg-surface p-6 shadow-[0_1px_0_var(--line)]">
         <SignInPanel
           backend={backendMode}
+          allowDemoSignIn={process.env.ALLOW_DEV_FALLBACK === "true"}
           providers={authProviders}
           next={next}
           errorCode={typeof sp.error === "string" ? sp.error : null}

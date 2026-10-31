@@ -1,8 +1,12 @@
 # MedScheme Finder
 
+<<<<<<< HEAD
 A demo-ready MVP that helps people in India discover government medical-assistance schemes they **may** qualify for, see each eligibility rule explained, understand what the scheme pays (and to whom), find participating hospitals, and reach the official application channel.
 
 It includes a small, sourced set of medical needs and is built so new needs, schemes and rules are added as data, not code.
+=======
+The platform helps people in India discover government medical-assistance schemes they **may** qualify for, see each eligibility rule explained, understand what the scheme pays (and to whom), find participating hospitals, and reach the official application channel.
+>>>>>>> origin/main
 
 > This tool does not decide eligibility, replace official verification or hospital authorisation, or give medical advice. Benefit figures are documented ceilings, not promised payments.
 
@@ -14,13 +18,14 @@ Next.js 16 (App Router, Turbopack) · TypeScript (strict) · Tailwind CSS 4 · S
 
 UI primitives are hand-written in `src/components/ui` (shadcn-style, no Radix) because the shadcn registry wasn't reachable from the build environment.
 
-## Quick start (no credentials needed)
+## Quick start
 
 ```bash
 npm install
 npm run dev            # http://localhost:3000
 ```
 
+<<<<<<< HEAD
 With no Supabase variables set, the app uses a local **development mode**:
 
 - Sign-in accepts any email **without verifying it**.
@@ -28,6 +33,17 @@ With no Supabase variables set, the app uses a local **development mode**:
 - Scheme data is read from the same seed file that populates Postgres.
 
 Do not enter real personal or medical details in development mode. Dev mode is disabled in production builds unless `ALLOW_DEV_FALLBACK=true`.
+=======
+Without Supabase credentials, browsing the app and its reference data works, but real sign-in is unavailable. To enable
+the local, unverified sign-in used only for offline demos and tests, set `ALLOW_DEV_FALLBACK=true` before starting:
+
+- Sign in using an official email ID.
+- Profiles, search history, and statuses are written to `.data/dev-store.json`.
+- Scheme data is read from the same seed file that populates Postgres.
+
+Do not use this fallback for real accounts or personal/medical information. For actual email, Google or SMS
+authentication, configure Supabase as described below.
+>>>>>>> origin/main
 
 ## Running with Supabase
 
@@ -69,9 +85,9 @@ When a flag is off, the button explains the provider isn't configured instead of
 | `npm run seed:sql` | Validates the dataset and regenerates `supabase/seed.sql` |
 | `npm run seed` | Validates and seeds a hosted Supabase project (service role) |
 
-Playwright needs a Chromium. Run `npx playwright install chromium`, or point at an existing binary with `PLAYWRIGHT_CHROMIUM_PATH=/path/to/chromium npm run test:e2e`.
+Playwright needs Chromium. Run `npx playwright install chromium`, or point to an existing binary with `PLAYWRIGHT_CHROMIUM_PATH=/path/to/chromium npm run test:e2e`.
 
-Income rules support `"exclusive": true` for limits written as "less than" (e.g. KBF), so the boundary amount itself doesn't match.
+Income rules support `"exclusive": true` for limits written as "less than" (e.g., KBF), so the boundary amount itself doesn't match.
 
 ## Routes
 
@@ -154,21 +170,7 @@ Hospitals (11), each traced to a source:
 
 Hospital coordinates are approximate public-map values and are labelled as such wherever a distance is shown.
 
-### Known gaps (shown honestly in the UI)
 
-- Knee replacement under MJPJAY is only hospital-reported: our reading of the package master is capped at row 546, before Orthopaedics. KASP procedure coverage isn't verified (Kerala's 2020 contract says it uses HBP 2.0, but the current list wasn't available).
-- `pmjay.gov.in`, `beneficiary.nha.gov.in`, `hospitals.pmjay.gov.in`, `jeevandayee.gov.in` and the 2019 RAN guidelines blocked automated fetching; links point to these official domains with a note to confirm details there.
-- State schemes cover Maharashtra and Kerala only. Tamil Nadu's CMCHIS was investigated but left out: its official portal didn't load, and the reported Aug 2026 rise from ₹5 lakh to ₹25 lakh had no government order behind it. Punjab was left out because its official FAQ describes the ₹5 lakh MMSBY, while news reports a ₹10 lakh Mukh Mantri Sehat Yojana from 2026 with no official page we could read. Karnataka's SAST pages block automated reading, and no official Rajasthan MAA page was found. Other states show a clear empty state.
-- HMCPF / HMDG / PMNRF application processes and document lists weren't available; only provisional, clearly labelled checklists are shown.
-
-## Adding a need or scheme
-
-1. Add the need to `medical_needs` in `supabase/seed/reference-data.json` and (optionally) its questions to `src/lib/needs/registry.ts`.
-2. Add `sources`, the `scheme`, its `scheme_treatments` (with a coverage level), `scheme_eligibility_rules` (structured `definition`), `scheme_documents` and `scheme_hospitals`.
-3. `npm run seed:sql && npm test` — the integrity checks reject unsourced claims.
-4. `npm run seed` (hosted) or `supabase db reset` (local).
-
-Form questions such as the state ration-card question, PM-JAY status, social category and exact income appear automatically when a scheme for that need has a rule that uses them.
 
 ## Deployment
 

@@ -101,7 +101,7 @@ function Results({ stored, modeMismatch }: { stored: StoredResults; modeMismatch
       <header className="space-y-4">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="space-y-1">
-            <h1 className="text-3xl font-semibold sm:text-4xl">Schemes for {stored.needName.toLowerCase()}</h1>
+            <h1 className="text-3xl font-semibold sm:text-4xl">Potential scheme results</h1>
             <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink-soft">
               <span className="inline-flex items-center gap-1.5">
                 {stored.mode === "open" ? <Users className="size-4" aria-hidden /> : <UserRound className="size-4" aria-hidden />}
@@ -193,7 +193,7 @@ function Results({ stored, modeMismatch }: { stored: StoredResults; modeMismatch
             <ul className="space-y-4">
               {visible.map((r) => (
                 <li key={r.scheme.id}>
-                  <SchemeCard result={r} searchId={stored.searchId} needName={stored.needName} />
+                  <SchemeCard result={r} searchId={stored.searchId} />
                 </li>
               ))}
             </ul>
@@ -241,8 +241,8 @@ function NoConfirmedMatch({ stored }: { stored: StoredResults }) {
       <Panel className="space-y-2">
         <h2 className="text-xl font-semibold">No confirmed match in our dataset</h2>
         <p className="text-ink-soft">
-          We couldn&apos;t find a scheme for {stored.needName.toLowerCase()} that we can trace to an official source. That doesn&apos;t mean
-          help doesn&apos;t exist — ask the hospital&apos;s medical social worker or scheme desk, and check the official resources below.
+          We couldn&apos;t find a scheme we can trace to an official source for this search. That doesn&apos;t mean help doesn&apos;t exist —
+          ask the hospital&apos;s medical social worker or scheme desk, and check the official resources below.
         </p>
       </Panel>
       <ResourceList stored={stored} />

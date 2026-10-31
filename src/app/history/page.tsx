@@ -18,7 +18,6 @@ export default async function HistoryPage() {
   let interactions: InteractionRecord[] = [];
   let statuses: ApplicationStatusRecord[] = [];
   let names = new Map<string, string>();
-  let needNames = new Map<string, string>();
   let error: string | null = null;
   try {
     const store = await getUserStore();
@@ -32,7 +31,6 @@ export default async function HistoryPage() {
     interactions = i;
     statuses = st;
     names = new Map(data.schemes.map((x) => [x.id, x.officialName]));
-    needNames = new Map(data.medicalNeeds.map((n) => [n.id, n.name]));
   } catch (e) {
     error = e instanceof DataUnavailableError ? e.userMessage : "Your history couldn't be loaded.";
   }
@@ -104,7 +102,7 @@ export default async function HistoryPage() {
                     <thead className="text-muted">
                       <tr className="border-b border-line">
                         <th scope="col" className="py-2 pr-4 font-medium">Date</th>
-                        <th scope="col" className="py-2 pr-4 font-medium">Medical need</th>
+                        <th scope="col" className="py-2 pr-4 font-medium">Search</th>
                         <th scope="col" className="py-2 pr-4 font-medium">Mode</th>
                         <th scope="col" className="py-2 font-medium">Results</th>
                       </tr>
@@ -113,7 +111,7 @@ export default async function HistoryPage() {
                       {searches.map((s) => (
                         <tr key={s.id} className="border-b border-line last:border-0">
                           <td className="py-3 pr-4 whitespace-nowrap">{formatDate(s.createdAt)}</td>
-                          <td className="py-3 pr-4">{needNames.get(s.needId) ?? s.needId}</td>
+                          <td className="py-3 pr-4">Medical assistance search</td>
                           <td className="py-3 pr-4">
                             {s.mode === "open" ? "For someone else" : `My profile${s.treatmentState ? `, ${stateName(s.treatmentState)}` : ""}`}
                           </td>

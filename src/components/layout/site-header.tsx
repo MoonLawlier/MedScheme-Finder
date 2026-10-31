@@ -32,6 +32,7 @@ export async function SiteHeader() {
               <div className="hidden sm:block">
                 <ModeToggle />
               </div>
+<<<<<<< HEAD
               <Link
                 href="/profile"
                 aria-label="My profile"
@@ -40,6 +41,12 @@ export async function SiteHeader() {
                 <UserRound className="size-4" aria-hidden />
                 <span className="hidden sm:inline">My profile</span>
               </Link>
+=======
+              <Link href="/profile" className={buttonClass("secondary", "sm")}>
+                My profile
+              </Link>
+              <SignOutButton className="hidden lg:inline-flex" />
+>>>>>>> origin/main
               <MobileMenu>
                 <div className="mb-3 sm:hidden">
                   <p className="mb-1.5 text-xs font-medium text-muted">Searching for</p>

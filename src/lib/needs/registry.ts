@@ -49,14 +49,14 @@ export const NEED_FIELDS: Record<string, NeedField[]> = {
   leukemia: [
     {
       key: "subtype",
-      label: "Leukaemia type, if known",
+      label: "Condition subtype, if known",
       help: "Only as written on a report. Choose “Not sure” if you don't know.",
       options: [
-        { value: "all", label: "Acute lymphoblastic leukaemia (ALL)" },
-        { value: "aml", label: "Acute myeloid leukaemia (AML)" },
-        { value: "apl", label: "Acute promyelocytic leukaemia (APL)" },
-        { value: "cml", label: "Chronic myeloid leukaemia (CML)" },
-        { value: "cll", label: "Chronic lymphocytic leukaemia (CLL)" },
+        { value: "all", label: "Acute lymphoblastic (ALL)" },
+        { value: "aml", label: "Acute myeloid (AML)" },
+        { value: "apl", label: "Acute promyelocytic (APL)" },
+        { value: "cml", label: "Chronic myeloid (CML)" },
+        { value: "cll", label: "Chronic lymphocytic (CLL)" },
         { value: "other", label: "Another type" },
         NOT_SURE,
       ],
@@ -64,7 +64,7 @@ export const NEED_FIELDS: Record<string, NeedField[]> = {
     {
       key: "classification",
       label: "Phase or clinical classification, if known",
-      help: "Leukaemia types are classified differently, so the choices change with the type.",
+      help: "Clinical classifications vary by subtype, so the choices change with the type.",
       showWhen: { key: "subtype", values: ["all", "aml", "apl", "cml", "cll"] },
       options: [NOT_SURE],
       optionsByValueOf: {

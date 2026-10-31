@@ -7,7 +7,11 @@ import { getUserStore } from "@/lib/data/user-store";
 import type { SearchRecord } from "@/lib/data/user-types";
 import { firstName, profileCompletion } from "@/lib/profile";
 import { formatDate } from "@/lib/utils/cn";
+<<<<<<< HEAD
 import { NeedNameInput } from "@/components/search/need-picker";
+=======
+import { NeedSearch } from "@/components/search/need-search";
+>>>>>>> origin/main
 import { Notice, Panel } from "@/components/ui/feedback";
 import { ButtonLink } from "@/components/ui/button";
 import type { MedicalNeed } from "@/lib/types";
@@ -15,7 +19,7 @@ import type { MedicalNeed } from "@/lib/types";
 export const metadata: Metadata = { title: "Find schemes" };
 
 const steps = [
-  { title: "Choose who and what", body: "Search for yourself or someone else, and pick the treatment or condition." },
+  { title: "Choose what", body: "Enter the condition or treatment." },
   { title: "Answer a few questions", body: "Only the details a documented scheme rule depends on. “Not sure” is always allowed." },
   { title: "See every criterion explained", body: "Each rule is marked met, not met, missing information, or needing an official check." },
   { title: "Apply through official channels", body: "We link to government sites and hospital scheme desks — never to third parties." },
@@ -43,8 +47,6 @@ export default async function DashboardPage({ searchParams }: PageProps<"/dashbo
 
   const completion = profileCompletion(profile, user.phone);
   const name = firstName(profile);
-  const needName = (id: string) => needs.find((n) => n.id === id)?.name ?? id;
-
   return (
     <div className="mx-auto max-w-6xl space-y-10 px-4 py-10 sm:px-6">
       <header className="flex flex-wrap items-end justify-between gap-4">
@@ -71,13 +73,14 @@ export default async function DashboardPage({ searchParams }: PageProps<"/dashbo
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold">What treatment or condition do you need help with?</h2>
           {needs.length > 0 ? (
+<<<<<<< HEAD
             <NeedNameInput needs={needs} />
+=======
+            <NeedSearch needs={needs} />
+>>>>>>> origin/main
           ) : (
             !error && <p className="text-sm text-muted">No medical needs are configured yet.</p>
           )}
-          <p className="text-sm text-muted">
-            Need help with more than one treatment? Run a search for each — results are kept separate so criteria stay clear.
-          </p>
         </div>
       </Panel>
 
@@ -90,13 +93,13 @@ export default async function DashboardPage({ searchParams }: PageProps<"/dashbo
             </Link>
           </div>
           {recent.length === 0 ? (
-            <p className="text-sm text-ink-soft">No searches yet. Pick a medical need above to run your first one.</p>
+            <p className="text-sm text-ink-soft">No searches yet. Enter a condition or treatment above to run your first one.</p>
           ) : (
             <ul className="divide-y divide-line">
               {recent.map((s) => (
                 <li key={s.id} className="flex flex-wrap items-baseline justify-between gap-2 py-3 text-sm">
                   <span>
-                    <span className="font-medium">{needName(s.needId)}</span>{" "}
+                    <span className="font-medium">Medical assistance search</span>{" "}
                     <span className="text-muted">— {s.mode === "open" ? "for someone else" : "with my profile"}</span>
                   </span>
                   <span className="text-muted">{formatDate(s.createdAt)}</span>
