@@ -17,19 +17,6 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { themeColor: "#12304a", width: "device-width", initialScale: 1 };
 
-<<<<<<< HEAD
-=======
-function EnvironmentBanner() {
-  if (backendMode === "supabase" || backendMode === "dev") return null;
-  return (
-    <div className="bg-bad-wash px-4 py-2 text-center text-[0.8125rem] text-ink" role="alert">
-      <strong>This deployment isn&apos;t configured.</strong> The database and sign-in are unavailable until Supabase
-      environment variables are set.
-    </div>
-  );
-}
-
->>>>>>> origin/main
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en-IN" className="h-full antialiased">

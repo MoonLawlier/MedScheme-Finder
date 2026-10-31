@@ -83,6 +83,7 @@ export default async function SearchPage({ params }: PageProps<"/search/[need]">
   return (
     <SearchForm
       need={need}
+      needs={data.medicalNeeds}
       fields={fieldsForNeed(need.id)}
       config={config}
       prefill={prefill}

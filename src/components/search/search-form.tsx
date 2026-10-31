@@ -6,10 +6,7 @@ import { useEffect, useMemo, useState, useSyncExternalStore, useTransition, type
 import { saveSearchAnswersToProfile } from "@/app/actions/profile";
 import { runSearch } from "@/app/actions/search";
 import { useMode } from "@/components/layout/mode-provider";
-<<<<<<< HEAD
 import { NeedNameInput } from "@/components/search/need-picker";
-=======
->>>>>>> origin/main
 import { Button, buttonClass } from "@/components/ui/button";
 import { ChoicePills, Field, Input, Select } from "@/components/ui/form";
 import { Notice, Panel } from "@/components/ui/feedback";
@@ -92,6 +89,7 @@ function draftFromProfile(p: ProfilePrefill | null): Draft {
 
 interface Props {
   need: MedicalNeed;
+  needs: MedicalNeed[];
   fields: NeedField[];
   config: FormConfig;
   prefill: ProfilePrefill | null;
@@ -116,7 +114,7 @@ export function SearchForm(props: Props) {
   return <SearchFormInner key={`${mode}:${props.need.id}`} mode={mode} {...props} />;
 }
 
-function SearchFormInner({ need, fields, config, prefill, mode }: Props & { mode: SearchMode }) {
+function SearchFormInner({ need, needs, fields, config, prefill, mode }: Props & { mode: SearchMode }) {
   const router = useRouter();
   const isOpen = mode === "open";
   const baseline = useMemo(() => (isOpen ? draftFromProfile(null) : draftFromProfile(prefill)), [isOpen, prefill]);
@@ -323,11 +321,8 @@ function SearchFormInner({ need, fields, config, prefill, mode }: Props & { mode
             </p>
           </header>
 
-<<<<<<< HEAD
           <NeedNameInput needs={needs} initialNeedId={need.id} buttonLabel="Change medical need" />
 
-=======
->>>>>>> origin/main
           {!isOpen && !prefill && (
             <Notice tone="warn" title="Your profile isn't set up yet">
               Nothing can be prefilled. <Link href="/profile">Complete your profile</Link> or fill in the details below.

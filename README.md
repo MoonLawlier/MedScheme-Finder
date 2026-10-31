@@ -1,12 +1,8 @@
 # MedScheme Finder
 
-<<<<<<< HEAD
 A demo-ready MVP that helps people in India discover government medical-assistance schemes they **may** qualify for, see each eligibility rule explained, understand what the scheme pays (and to whom), find participating hospitals, and reach the official application channel.
 
 It includes a small, sourced set of medical needs and is built so new needs, schemes and rules are added as data, not code.
-=======
-The platform helps people in India discover government medical-assistance schemes they **may** qualify for, see each eligibility rule explained, understand what the scheme pays (and to whom), find participating hospitals, and reach the official application channel.
->>>>>>> origin/main
 
 > This tool does not decide eligibility, replace official verification or hospital authorisation, or give medical advice. Benefit figures are documented ceilings, not promised payments.
 
@@ -25,15 +21,6 @@ npm install
 npm run dev            # http://localhost:3000
 ```
 
-<<<<<<< HEAD
-With no Supabase variables set, the app uses a local **development mode**:
-
-- Sign-in accepts any email **without verifying it**.
-- Profiles, search history and statuses are written to `.data/dev-store.json`.
-- Scheme data is read from the same seed file that populates Postgres.
-
-Do not enter real personal or medical details in development mode. Dev mode is disabled in production builds unless `ALLOW_DEV_FALLBACK=true`.
-=======
 Without Supabase credentials, browsing the app and its reference data works, but real sign-in is unavailable. To enable
 the local, unverified sign-in used only for offline demos and tests, set `ALLOW_DEV_FALLBACK=true` before starting:
 
@@ -43,7 +30,6 @@ the local, unverified sign-in used only for offline demos and tests, set `ALLOW_
 
 Do not use this fallback for real accounts or personal/medical information. For actual email, Google or SMS
 authentication, configure Supabase as described below.
->>>>>>> origin/main
 
 ## Running with Supabase
 
