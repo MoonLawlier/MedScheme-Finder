@@ -1,44 +1,15 @@
 import Link from "next/link";
 import { brand } from "@/config/brand";
 import { getCurrentUser } from "@/lib/auth/session";
-import { getReferenceData } from "@/lib/data/reference";
-import { runMatching } from "@/lib/matching/engine";
 import { buttonClass } from "@/components/ui/button";
-import { OverallStamp, RuleStamp } from "@/components/ui/feedback";
-import { criterionLabel } from "@/components/results/labels";
-import type { SchemeResult } from "@/lib/types";
-
-/** Runs the real engine on a sample person so the hero shows genuine output, not a mock. */
-async function sampleResult(): Promise<SchemeResult | null> {
-  try {
-    const data = await getReferenceData();
-    const results = runMatching(data, {
-      needId: "knee-replacement",
-      mode: "open",
-      age: 72,
-      residenceState: null,
-      residenceDistrict: null,
-      income: { rangeId: null, exactInr: null },
-      insurance: { status: "no", insurer: null, policyType: null },
-      socialCategory: null,
-      pmjayStatus: null,
-      stateBeneficiaryDocument: null,
-      needDetails: {},
-      treatmentLocation: { state: null, district: null, cityOrPin: null, latitude: null, longitude: null, source: "manual" },
-    });
-    return results.find((r) => r.overall !== "does_not_match") ?? null;
-  } catch {
-    return null;
-  }
-}
 
 export default async function LandingPage() {
-  const [user, sample] = await Promise.all([getCurrentUser(), sampleResult()]);
+  const user = await getCurrentUser();
   return (
     <>
       <section className="border-b border-line bg-surface">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:py-20">
-          <div className="space-y-6">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:py-20">
+          <div className="max-w-3xl space-y-6">
             <h1 className="text-4xl font-semibold sm:text-5xl lg:text-[3.4rem]">
               Which government scheme could help pay for treatment — and why?
             </h1>
@@ -54,33 +25,7 @@ export default async function LandingPage() {
                 How results are worked out
               </Link>
             </div>
-            <p className="text-sm text-muted">Currently covers knee replacement, leukaemia and angioplasty.</p>
           </div>
-
-          {sample && (
-            <figure className="rounded-2xl border border-line bg-paper p-5 sm:p-6">
-              <figcaption className="mb-4 space-y-2">
-                <p className="text-sm text-muted">Real output for a sample person: age 72, needs a knee replacement.</p>
-                <p className="font-display text-xl font-semibold">{sample.scheme.officialName}</p>
-                <OverallStamp status={sample.overall} />
-              </figcaption>
-              <ul className="divide-y divide-line rounded-xl border border-line bg-surface">
-                {sample.evaluations
-                  .filter((e) => e.mandatory)
-                  .slice(0, 4)
-                  .map((e) => (
-                    <li key={e.ruleId} className="flex flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
-                      <span className="text-sm">
-                        <span className="block font-semibold">{criterionLabel[e.criterion]}</span>
-                        <span className="text-ink-soft">{e.officialText}</span>
-                      </span>
-                      <RuleStamp status={e.display} />
-                    </li>
-                  ))}
-              </ul>
-              <p className="mt-3 text-xs text-muted">{sample.summaryReason}</p>
-            </figure>
-          )}
         </div>
       </section>
 

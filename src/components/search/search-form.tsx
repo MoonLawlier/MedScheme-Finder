@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState, useSyncExternalStore, useTransition, type
 import { saveSearchAnswersToProfile } from "@/app/actions/profile";
 import { runSearch } from "@/app/actions/search";
 import { useMode } from "@/components/layout/mode-provider";
-import { NeedPicker } from "@/components/search/need-picker";
+import { NeedNameInput } from "@/components/search/need-picker";
 import { Button, buttonClass } from "@/components/ui/button";
 import { ChoicePills, Field, Input, Select } from "@/components/ui/form";
 import { Notice, Panel } from "@/components/ui/feedback";
@@ -314,17 +314,14 @@ function SearchFormInner({ need, needs, fields, config, prefill, mode }: Props &
       <div className="grid gap-8 lg:grid-cols-[1fr_20rem]">
         <form onSubmit={submit} noValidate className="space-y-6">
           <header className="space-y-2">
-            <h1 className="text-3xl font-semibold">{need.name}: search details</h1>
+            <h1 className="text-3xl font-semibold">Search details</h1>
             <p className="max-w-prose text-ink-soft">
               Answer what you know. Every question allows “Not sure”, and missing answers are shown as missing — never
               assumed.
             </p>
           </header>
 
-          <div className="space-y-2">
-            <p className="text-sm font-semibold">Medical need</p>
-            <NeedPicker needs={needs} compact activeId={need.id} />
-          </div>
+          <NeedNameInput needs={needs} initialNeedId={need.id} buttonLabel="Change medical need" />
 
           {!isOpen && !prefill && (
             <Notice tone="warn" title="Your profile isn't set up yet">

@@ -2,7 +2,7 @@
 
 A demo-ready MVP that helps people in India discover government medical-assistance schemes they **may** qualify for, see each eligibility rule explained, understand what the scheme pays (and to whom), find participating hospitals, and reach the official application channel.
 
-It covers three needs today — **knee replacement**, **leukaemia** and **angioplasty** — and is built so new needs, schemes and rules are added as data, not code.
+It includes a small, sourced set of medical needs and is built so new needs, schemes and rules are added as data, not code.
 
 > This tool does not decide eligibility, replace official verification or hospital authorisation, or give medical advice. Benefit figures are documented ceilings, not promised payments.
 
@@ -21,13 +21,13 @@ npm install
 npm run dev            # http://localhost:3000
 ```
 
-With no Supabase variables set, the app runs in a clearly labelled **development mode**:
+With no Supabase variables set, the app uses a local **development mode**:
 
-- Sign-in accepts any email **without verifying it** (banner on every page).
+- Sign-in accepts any email **without verifying it**.
 - Profiles, search history and statuses are written to `.data/dev-store.json`.
 - Scheme data is read from the same seed file that populates Postgres.
 
-Dev mode is disabled in production builds unless `ALLOW_DEV_FALLBACK=true`.
+Do not enter real personal or medical details in development mode. Dev mode is disabled in production builds unless `ALLOW_DEV_FALLBACK=true`.
 
 ## Running with Supabase
 
@@ -77,10 +77,10 @@ Income rules support `"exclusive": true` for limits written as "less than" (e.g.
 
 | Route | Purpose |
 |---|---|
-| `/` | Landing page; the hero runs the real engine on a sample person |
+| `/` | General landing page |
 | `/sign-in`, `/auth/callback` | Email OTP / magic link, Google, phone; dev sign-in in dev mode |
 | `/profile` | Profile with completion indicator, consent-gated income, phone verification |
-| `/dashboard` | Mode selector, the three needs, recent activity, how it works |
+| `/dashboard` | Search mode, medical-need name entry, recent activity, how it works |
 | `/search/[need]` | Need-specific form with progressive disclosure, prefill chips, geolocation |
 | `/results` | Summary, National/State filter, sort, expandable scheme cards |
 | `/history` | Searches, schemes opened, user-recorded application status; empty state “Nothing Here!” |

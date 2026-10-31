@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { UserRound } from "lucide-react";
 import { getCurrentUser } from "@/lib/auth/session";
 import { ModeToggle } from "@/components/layout/mode-provider";
-import { SignOutButton } from "@/components/layout/sign-out-button";
 import { Logo } from "@/components/layout/logo";
 import { NavLinks } from "@/components/layout/nav-links";
 import { MobileMenu } from "@/components/layout/mobile-menu";
@@ -9,7 +9,6 @@ import { buttonClass } from "@/components/ui/button";
 
 const links = [
   { href: "/dashboard", label: "Find schemes" },
-  { href: "/profile", label: "My profile" },
   { href: "/history", label: "Scheme history" },
   { href: "/help", label: "Help" },
 ];
@@ -33,7 +32,14 @@ export async function SiteHeader() {
               <div className="hidden sm:block">
                 <ModeToggle />
               </div>
-              <SignOutButton className="hidden lg:inline-flex" />
+              <Link
+                href="/profile"
+                aria-label="My profile"
+                className="inline-flex h-9 items-center gap-2 rounded-lg px-2 text-sm font-medium text-ink-soft hover:bg-paper hover:text-ink sm:px-3"
+              >
+                <UserRound className="size-4" aria-hidden />
+                <span className="hidden sm:inline">My profile</span>
+              </Link>
               <MobileMenu>
                 <div className="mb-3 sm:hidden">
                   <p className="mb-1.5 text-xs font-medium text-muted">Searching for</p>
@@ -42,9 +48,6 @@ export async function SiteHeader() {
                 <nav aria-label="Main mobile">
                   <NavLinks links={links} vertical />
                 </nav>
-                <div className="mt-2 border-t border-line pt-3">
-                  <SignOutButton />
-                </div>
               </MobileMenu>
             </div>
           </>

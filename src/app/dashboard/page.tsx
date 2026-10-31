@@ -7,7 +7,7 @@ import { getUserStore } from "@/lib/data/user-store";
 import type { SearchRecord } from "@/lib/data/user-types";
 import { firstName, profileCompletion } from "@/lib/profile";
 import { formatDate } from "@/lib/utils/cn";
-import { NeedPicker, WhoAreYouSearchingFor } from "@/components/search/need-picker";
+import { NeedNameInput } from "@/components/search/need-picker";
 import { Notice, Panel } from "@/components/ui/feedback";
 import { ButtonLink } from "@/components/ui/button";
 import type { MedicalNeed } from "@/lib/types";
@@ -68,11 +68,10 @@ export default async function DashboardPage({ searchParams }: PageProps<"/dashbo
       )}
 
       <Panel className="space-y-8">
-        <WhoAreYouSearchingFor />
         <div className="space-y-4">
-          <h2 className="text-2xl font-semibold">What medical assistance are you looking for?</h2>
+          <h2 className="text-2xl font-semibold">What treatment or condition do you need help with?</h2>
           {needs.length > 0 ? (
-            <NeedPicker needs={needs} />
+            <NeedNameInput needs={needs} />
           ) : (
             !error && <p className="text-sm text-muted">No medical needs are configured yet.</p>
           )}
